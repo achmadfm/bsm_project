@@ -224,7 +224,7 @@
 							</div>
 						</div>
 
-						<div class="col-lg-4">
+					<div class="col-lg-4">
 						<div class="featured-box featured-box-primary">
 							<div class="box-content">
 								<h4 class="text-uppercase">Pengumuman</h4>
@@ -254,28 +254,34 @@
 								<a class="btn btn-primary" href="<?php echo base_url('pengumuman')?>">Lihat Semua</a>
 							</div>
 						</div>
+						<div class="col-lg-5">
+							<div class="col-lg-4">
+								<iframe width="300" height="200" src="https://www.youtube.com/embed/6PF4wBRcV7E" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+						</div>
 					</div>
-
-					<div class="col-lg-4">
+					
+					
+				<div class="col-lg-4">
 					<div class="featured-box featured-box-primary">
 						<div class="box-content">
 							<h4 class="text-uppercase">Acara</h4>
 							<ul class="list list-icons text-left">
 								<?php
-	                $no=0;
-	                foreach ($agenda->result_array() as $g) :
-	                   $no++;
-	                   $agenda_id=$g['agenda_id'];
-	                   $agenda_nama=$g['agenda_nama'];
-	                   $agenda_deskripsi=$g['agenda_deskripsi'];
-	                   $agenda_mulai=$g['agenda_mulai'];
-	                   $agenda_selesai=$g['agenda_selesai'];
-	                   $agenda_tempat=$g['agenda_tempat'];
-	                   $agenda_waktu=$g['agenda_waktu'];
-	                   $agenda_keterangan=$g['agenda_keterangan'];
-	                   $agenda_author=$g['agenda_author'];
-	                   $tanggal=$g['tanggal'];
-	              ?>
+									$no=0;
+									foreach ($agenda->result_array() as $g) :
+									$no++;
+									$agenda_id=$g['agenda_id'];
+									$agenda_nama=$g['agenda_nama'];
+									$agenda_deskripsi=$g['agenda_deskripsi'];
+									$agenda_mulai=$g['agenda_mulai'];
+									$agenda_selesai=$g['agenda_selesai'];
+									$agenda_tempat=$g['agenda_tempat'];
+									$agenda_waktu=$g['agenda_waktu'];
+									$agenda_keterangan=$g['agenda_keterangan'];
+									$agenda_author=$g['agenda_author'];
+									$tanggal=$g['tanggal'];
+								?>
 								<li>
 									<a href="<?php echo base_url().'agenda'?>"><img width="60" height="60" src="<?php echo base_url().'template/images/agenda.png'?>"  alt=" " /></a>
 									<br>
@@ -290,8 +296,6 @@
 						</div>
 					</div>
 				</div>
-
-
 						<div class="col-12">
 							<div class="col-lg-4">
 								<div class="featured-box featured-box-primary">
