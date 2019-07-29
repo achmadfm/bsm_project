@@ -85,7 +85,8 @@
                           $komentar_pesan=$k['komentar_isi'];
 
                           $tb = $komentar_tgl;
-                          $tanggal = date_default_timezone_set('Asia/Makassar');
+                          date_default_timezone_set('Asia/Makassar');
+                          $tanggal = date('d F Y');
                     ?>
                     <li>
                       <div class="message-center">
