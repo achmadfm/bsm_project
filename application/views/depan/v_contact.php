@@ -170,7 +170,7 @@
 							<ul class="list list-icons list-icons-style-3 mt-xlg">
 								<li><i class="fa fa-map-marker"></i> <strong>Alamat:</strong> Jl. Lanto Dg. Pasewang No.39-41, Makassar, Sulawesi Selatan</li>
 								<li><i class="fa fa-phone"></i> <strong>Telepon:</strong> (0411) 855-123</li>
-								<li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="#">info.bosowaschoolmakassar@gmail.com</a></li>
+								<li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="#">info@bosowaschool.sch.id</a></li>
 							</ul>
 
 							<hr>
