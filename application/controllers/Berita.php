@@ -28,7 +28,7 @@ class Berita extends CI_Controller{
 	}
 
 	function index(){
-		$jum=$this->m_tulisan->berita();
+	$jum=$this->m_tulisan->berita();
     $page=$this->uri->segment(3);
     if(!$page):
         $offset = 0;
