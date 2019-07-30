@@ -156,6 +156,7 @@
 										</div>
 									</div>
 									<?php
+										date_default_timezone_set('Asia/Makassar');
 										$tgl = $tanggal;
 										$hari = date('d', strtotime($tgl));
 										$bulan = date('M',strtotime($tgl));
@@ -211,24 +212,24 @@
 																<h3 class="heading-primary"><i class="fa fa-comments"></i>Komentar </h3>
 																	<ul class="comments">
 																		<?php
-				                              $colors = array(
-				                                  '#ff9e67',
-				                                  '#10bdff',
-				                                  '#14b5c7',
-				                                  '#f98182',
-				                                  '#8f9ce2',
-				                                  '#ee2b33',
-				                                  '#d4ec15',
-				                                  '#613021',
-				                              );
-				                              foreach ($show_komentar->result() as $row) :
-				                              shuffle($colors);
-				                            ?>
+																			$colors = array(
+																				'#ff9e67',
+																				'#10bdff',
+																				'#14b5c7',
+																				'#f98182',
+																				'#8f9ce2',
+																				'#ee2b33',
+																				'#d4ec15',
+																				'#613021',
+																			);
+																			foreach ($show_komentar->result() as $row) :
+																			shuffle($colors);
+																		?>
 																		<li>
 																		<div class="comment">
 																			<div class="img-thumbnail d-none d-sm-block" style="background-color:<?php echo reset($colors);?>;width: 75px;height: 75px;border-radius:50px 50px 50px 50px;">
-                                          <center><h2 style="padding-top:20%;color:#fff;"><?php echo substr($row->komentar_nama,0,1);?></h2></center>
-                                      </div>
+																				<center><h2 style="padding-top:20%;color:#fff;"><?php echo substr($row->komentar_nama,0,1);?></h2></center>
+																			</div>
 																			<div class="comment-block">
 																				<div class="comment-arrow"></div>
 																				<span class="comment-by">
@@ -241,16 +242,16 @@
 
 																		<ul class="comments reply">
 																			<?php
-	                					            $komentar_id=$row->komentar_id;
-	                					            $query=$this->db->query("SELECT * FROM tbl_komentar WHERE komentar_status='1' AND komentar_parent='$komentar_id' ORDER BY komentar_id ASC");
-	                					            foreach ($query->result() as $res) :
-	                                        shuffle($colors);
-                					        		?>
+																				$komentar_id=$row->komentar_id;
+																				$query=$this->db->query("SELECT * FROM tbl_komentar WHERE komentar_status='1' AND komentar_parent='$komentar_id' ORDER BY komentar_id ASC");
+																				foreach ($query->result() as $res) :
+																				shuffle($colors);
+																			?>
 																			<li>
 																				<div class="comment">
 																					<div class="img-thumbnail d-none d-sm-block" style="background-color:<?php echo reset($colors);?>;width:75px; height:75px;border-radius:50px 50px 50px 50px;">
-                                              <center><h2 style="padding-top:20%;color:#fff;"><?php echo substr($res->komentar_nama,0,1);?></h2></center>
-                                          </div>
+																					<center><h2 style="padding-top:20%;color:#fff;"><?php echo substr($res->komentar_nama,0,1);?></h2></center>
+																				</div>
 																					<div class="comment-block">
 																						<div class="comment-arrow"></div>
 																						<span class="comment-by">
