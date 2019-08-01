@@ -254,11 +254,6 @@
 								<a class="btn btn-primary" href="<?php echo base_url('pengumuman')?>">Lihat Semua</a>
 							</div>
 						</div>
-						<div class="col-lg-5">
-							<div class="col-lg-4">
-								<iframe width="300" height="200" src="https://www.youtube.com/embed/6PF4wBRcV7E" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</div>
-						</div>
 					</div>
 					
 					
@@ -331,36 +326,61 @@
 
 					<div class="container">
 						<div class="row counters">
-								<div class="col-sm-6 col-lg-3">
-									<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="300">
-										<i style="color:#ed9c28;" class="fa fa-user-o"></i>
-										<strong style="color:#ed9c28;" data-to="<?php echo $visitoronline;?>">0</strong>
-										<label>Pengunjung Online Saat ini</label>
-									</div>
-								</div>
-								<div class="col-sm-6 col-lg-3">
-									<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="600">
-										<i style="color:#ed9c28;" class="fa fa-users"></i>
-										<strong style="color:#ed9c28;" data-to="<?php echo $pengunjung?>">0</strong>
-										<label>Pengunjung Hari ini</label>
-									</div>
-								</div>
-								<div class="col-sm-6 col-lg-3">
-									<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="900">
-										<i style="color:#ed9c28;" class="fa fa-exchange"></i>
-										<strong style="color:#ed9c28;" data-to="<?php echo $hits['total'];?>">0</strong>
-										<label>Hits hari ini</label>
+							<div class="col-sm-6 col-lg-4">
+								<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="300">
+									<iframe width="320" height="220" src="https://www.youtube.com/embed/kUCF2D4bxmk" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									<label><b>Profil Bosowa School Makassar</b></label>
 								</div>
 							</div>
-								<div class="col-sm-6 col-lg-3">
-									<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="1200">
-										<i style="color:#ed9c28;" class="fa fa-line-chart"></i>
-										<strong style="color:#ed9c28;" data-to="<?php echo $lastyear['visitor_last_year'];?>">0</strong>
-										<label>Pengunjung Tahun Terakhir</label>
+							<div class="col-sm-6 col-lg-4">
+								<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="600">
+								<iframe width="320" height="220" src="https://www.youtube.com/embed/VTfUCu6uCP8" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									<label><b>Ekskul Robotika Bosowa School Makassar</b></label>
 								</div>
 							</div>
+							<div class="col-sm-6 col-lg-4">
+								<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="900">
+								<iframe width="320" height="220" src="https://www.youtube.com/embed/6PF4wBRcV7E" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									<label><b>Tutorial Pendaftaran Siswa Baru Bosowa School Makassar</b></label>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
+
+					<hr class="tall">
+
+					<div class="container">
+						<div class="row counters">
+							<div class="col-sm-6 col-lg-3">
+								<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="300">
+									<i style="color:#ed9c28;" class="fa fa-user-o"></i>
+									<strong style="color:#ed9c28;" data-to="<?php echo $visitoronline;?>">0</strong>
+									<label>Pengunjung Online Saat ini</label>
+								</div>
+							</div>
+							<div class="col-sm-6 col-lg-3">
+								<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="600">
+									<i style="color:#ed9c28;" class="fa fa-users"></i>
+									<strong style="color:#ed9c28;" data-to="<?php echo $pengunjung?>">0</strong>
+									<label>Pengunjung Hari ini</label>
+								</div>
+							</div>
+							<div class="col-sm-6 col-lg-3">
+								<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="900">
+									<i style="color:#ed9c28;" class="fa fa-exchange"></i>
+									<strong style="color:#ed9c28;" data-to="<?php echo $hits['total'];?>">0</strong>
+									<label>Hits hari ini</label>
+								</div>
+							</div>
+							<div class="col-sm-6 col-lg-3">
+								<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="1200">
+									<i style="color:#ed9c28;" class="fa fa-line-chart"></i>
+									<strong style="color:#ed9c28;" data-to="<?php echo $lastyear['visitor_last_year'];?>">0</strong>
+									<label>Pengunjung Tahun Terakhir</label>
+								</div>
+							</div>
+						</div>
+					</div>
 
 			<?php $this->load->view('depan/v_footer')?>
 		</div>
