@@ -24,7 +24,7 @@
 				<span class="phone">(0411) 855-123</span>
 				<p class="mb-0">Eko Arianto : +62812-8120-1063<br>Farannisa : +62812-4243-9953 <br>Fachru Sawati : +62813-9888-8018 </p>
 				<ul class="list list-icons list-icons-sm">
-					<li><i class="fa fa-envelope"></i> <a href="#">info.bosowaschoolmakassar@gmail.com</a></li>
+					<li><i class="fa fa-envelope"></i> <a href="#">info@bosowaschool.sch.id</a></li>
 				</ul>
 			</div>
 			<div class="col-lg-2">

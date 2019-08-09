@@ -212,7 +212,7 @@
 											<a href="<?php echo site_url().'news/'.$row->tulisan_slug;?>"><img width="250" height="150" src="<?php echo base_url().'template/cover/'.$row->tulisan_gambar;?>"  alt=" " /></a>
 											<br>
 											<h4><strong><?php echo $row->tulisan_judul;?></strong></h4>
-											<i class="fa fa-calendar-o"></i><strong><em> Tanggal <?php echo Home::format_tanggal($row->tanggal);?></em></strong><br>
+											<i class="fa fa-calendar-o"></i><strong><em> Posted : <?php echo Home::format_tanggal($row->tanggal);?></em></strong><br>
                       <i class="fa fa-user-circle"></i><em> (Editor : <?php echo $row->tulisan_author;?>)</em>
                       <?php echo limit_words($row->tulisan_isi,12).'...';?>
 										</li>
@@ -244,7 +244,7 @@
 										<center><a href="<?php echo base_url().'pengumuman'?>"><img width="100" height="100" src="<?php echo base_url().'template/toas.png'?>"  alt=" " /></a></center>
 										<br>
 										<h6><strong><?php echo $judul;?></strong></h6>
-										<i class="fa fa-calendar-o"><strong><em> Tanggal <?php echo Home::format_tanggal($tanggal);?></em></strong></i><br>
+										<i class="fa fa-calendar-o"><strong><em> Posted : <?php echo Home::format_tanggal($tanggal);?></em></strong></i><br>
 										<i class="fa fa-user-circle"> (Editor : <?php echo $author;?>)</i><br>
 										<?php echo limit_words($deskripsi,15).'...';?>
 									</li>
@@ -278,10 +278,9 @@
 									$tanggal=$g['tanggal'];
 								?>
 								<li>
-									<a href="<?php echo base_url().'agenda'?>"><img width="60" height="60" src="<?php echo base_url().'template/images/agenda.png'?>"  alt=" " /></a>
-									<br>
-									<h6><strong><?php echo $agenda_nama;?></strong></h6>
-									<i class="fa fa-calendar-o"><strong> Tanggal <?php echo Home::format_tanggal($tanggal);?></strong></i><br>
+									<center><img width="100" height="100" src="<?php echo base_url().'template/agenda.png'?>"  alt=" " /></center><br>
+									<center><h6><strong><a href="<?php echo base_url().'pengumuman'?>"><?php echo $agenda_nama;?></a></strong></h6></center>
+									<i class="fa fa-calendar-o"><strong> Posted : <?php echo Home::format_tanggal($tanggal);?></strong></i><br>
 									<?php echo limit_words($agenda_deskripsi,10).'...'?>
 								</li>
 								<hr>
@@ -290,34 +289,33 @@
 
 						</div>
 					</div>
-				</div>
-						<div class="col-12">
-							<div class="col-lg-4">
-								<div class="featured-box featured-box-primary">
-									<div class="box-content">
-										<h4 class="text-uppercase">Galeri</h4>
-										<ul class="thumbnail-gallery" data-plugin-lightbox data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}">
-											<?php
-                                              foreach ($galeri->result_array() as $g) {
-                                                   $galeri_id=$g['galeri_id'];
-                                                   $galeri_judul=$g['galeri_judul'];
-                                                   $galeri_tanggal=$g['tanggal'];
-                                                   $galeri_author=$g['galeri_author'];
-                                                   $galeri_gambar=$g['galeri_gambar'];
-                                                   $galeri_album_id=$g['galeri_album_id'];
-                                                   $galeri_album_nama=$g['album_nama'];
-                                          	?>
-											<li>
-												<a href="<?php echo base_url().'template/galeri/'.$galeri_gambar;?>"><img width="100" height="100" src="<?php echo base_url().'template/galeri/'.$galeri_gambar;?>"  alt=""></a>
-												<h4><?php echo $galeri_judul;?></h4>
-												<em><?php echo 'Tanggal '.Home::format_tanggal($galeri_tanggal);;?></em>
-											</li>
-											<?php }?>
-										</ul>
-									</div>
+						<div class="col-lg-12">
+							<div class="featured-box featured-box-primary">
+								<div class="box-content">
+									<h4 class="text-uppercase">Galeri</h4>
+									<ul class="thumbnail-gallery" data-plugin-lightbox data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}">
+										<?php
+                                          foreach ($galeri->result_array() as $g) {
+                                               $galeri_id=$g['galeri_id'];
+                                               $galeri_judul=$g['galeri_judul'];
+                                               $galeri_tanggal=$g['tanggal'];
+                                               $galeri_author=$g['galeri_author'];
+                                               $galeri_gambar=$g['galeri_gambar'];
+                                               $galeri_album_id=$g['galeri_album_id'];
+                                               $galeri_album_nama=$g['album_nama'];
+                                      	?>
+										<li>
+											<a href="<?php echo base_url().'template/galeri/'.$galeri_gambar;?>"><img width="100" height="100" src="<?php echo base_url().'template/galeri/'.$galeri_gambar;?>"  alt=""></a>
+											<h4><?php echo $galeri_judul;?></h4>
+											<em><?php echo 'Posted : '.Home::format_tanggal($galeri_tanggal);;?></em>
+										</li>
+										<?php }?>
+									</ul>
 								</div>
 							</div>
 						</div>
+				</div>
+						
 					  </div>
 					</div>
 					</div>
