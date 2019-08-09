@@ -1,9 +1,3 @@
-<?php
-    $query=$this->db->query("SELECT * FROM tbl_inbox WHERE inbox_status='1'");
-    $query2=$this->db->query("SELECT * FROM tbl_komentar WHERE komentar_status='0'");
-    $jum_comment=$query2->num_rows();
-    $jum_pesan=$query->num_rows();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -272,6 +266,7 @@
                     $namasiswa = $i['nama_siswa'];
                     $id_kelas = $i['id_kelas'];
                     $kelas = $i['kelas'];
+                    $sampul = $i['sampul']
                 ?>
                 <div class="modal fade" id="ModalEdit<?php echo $id_prestasi;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
                     <div class="modal-dialog" role="document">
@@ -285,6 +280,7 @@
                                       <label for="inputUserName" class="col-sm-4 control-label">Nama Prestasi</label>
                                       <div class="col-sm-7">
                                         <input type="hidden" name="kode" value="<?php echo $id_prestasi;?>"/>
+                                        <input type="hidden" name="sampul" value="<?php echo $sampul;?>"/>
                                         <input type="text" name="prestasi" class="form-control" id="inputUserName" value="<?php echo $nama_prestasi;?>" placeholder="Nama Prestasi" required>
                                       </div>
                                   </div>
@@ -376,6 +372,7 @@
                 $namasiswa = $i['nama_siswa'];
                 $id_kelas = $i['id_kelas'];
                 $kelas = $i['kelas'];
+                $sampul = $i['sampul']
               ?>
       	<!--Modal Hapus Pengguna-->
               <div class="modal fade" id="ModalHapus<?php echo $id_prestasi;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -387,7 +384,8 @@
                           </div>
                           <form class="form-horizontal" action="<?php echo base_url().'admin/prestasi/hapus_prestasi'?>" method="post" enctype="multipart/form-data">
                           <div class="modal-body">
-      							<input type="hidden" name="kode" value="<?php echo $id_prestasi;?>"/>
+      							              <input type="hidden" name="kode" value="<?php echo $id_prestasi;?>"/>
+                                  <input type="hidden" name="sampul" value="<?php echo $sampul;?>"/>
                                   <p>Apakah Anda yakin mau menghapus Prestasi <b><?php echo $nama_prestasi;?></b> ini?</p>
 
                           </div>

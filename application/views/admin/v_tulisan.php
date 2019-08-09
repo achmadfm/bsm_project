@@ -1,9 +1,3 @@
-<?php
-    $query=$this->db->query("SELECT * FROM tbl_inbox WHERE inbox_status='1'");
-    $query2=$this->db->query("SELECT * FROM tbl_komentar WHERE komentar_status='0'");
-    $jum_comment=$query2->num_rows();
-    $jum_pesan=$query->num_rows();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -142,16 +136,16 @@
                                   </thead>
                                     <tbody>
                                       <?php
-                            					$no=0;
-                            					foreach ($data->result_array() as $i) :
-                            					   $no++;
-                            					   $tulisan_id=$i['tulisan_id'];
-                            					   $tulisan_judul=$i['tulisan_judul'];
-                            					   $tulisan_isi=$i['tulisan_isi'];
-                            					   $tulisan_tanggal=$i['tanggal'];
-                            					   $tulisan_author=$i['tulisan_author'];
-                            					   $tulisan_gambar=$i['tulisan_gambar'];
-                            					   $tulisan_views=$i['tulisan_views'];
+                                        $no=0;
+                                        foreach ($data->result_array() as $i) :
+                                        $no++;
+                                        $tulisan_id=$i['tulisan_id'];
+                                        $tulisan_judul=$i['tulisan_judul'];
+                                        $tulisan_isi=$i['tulisan_isi'];
+                                        $tulisan_tanggal=$i['tanggal'];
+                                        $tulisan_author=$i['tulisan_author'];
+                                        $tulisan_gambar=$i['tulisan_gambar'];
+                                        $tulisan_views=$i['tulisan_views'];
                                          $kategori_id=$i['tulisan_kategori_id'];
                                          $kategori_nama=$i['tulisan_kategori_nama'];
                                          $id_jenis=$i['id_jenis'];
