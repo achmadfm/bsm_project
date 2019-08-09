@@ -1,9 +1,3 @@
-<?php
-    $query=$this->db->query("SELECT * FROM tbl_inbox WHERE inbox_status='1'");
-    $query2=$this->db->query("SELECT * FROM tbl_komentar WHERE komentar_status='0'");
-    $jum_comment=$query2->num_rows();
-    $jum_pesan=$query->num_rows();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -238,6 +232,7 @@
                                   <label class="col-md-12">Isi Welcome Speech</label>
                                   <div class="col-md-12">
                                       <input type="hidden" name="xkode" value="<?php echo $s['id_sambutan'];?>">
+                                      <input type="hidden" name="xfoto" value="<?php echo $s['foto_sambutan'];?>">
                                       <textarea id="mymce" rows="5" name="sambutan"><?php echo $s['isi_sambutan'];?></textarea>
                                   </div>
                               </div>

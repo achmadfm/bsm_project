@@ -66,6 +66,7 @@
                             <?php echo form_open_multipart('admin/web_admin/up_fasilitas');?>
                                     <div class="form-group">
                                         <input type="hidden" name="idf" value="<?php echo $idf;?>">
+                                        <input type="hidden" name="foto" value="<?php echo $foto;?>">
                                         <label for="recipient-name" class="control-label">Nama Fasilitas</label>
                                         <input type="text" class="form-control" name="nama_fasilitas" id="recipient-name1" value="<?php echo $namafasilitas;?>">
                                     </div>
@@ -203,6 +204,7 @@
                             <?php echo form_open_multipart('admin/web_admin/up_program');?>
                                     <div class="form-group">
                                         <input type="hidden" name="idp" value="<?php echo $idp;?>">
+                                        <input type="hidden" name="foto" value="<?php echo $fotop;?>">
                                         <label for="recipient-name" class="control-label">Nama Program</label>
                                         <input type="text" class="form-control" name="nama_program" id="recipient-name1" value="<?php echo $namaprogram;?>">
                                     </div>
@@ -259,8 +261,8 @@
                           </div>
                           <?php echo form_open_multipart('admin/web_admin/hapus_program')?>
                           <div class="modal-body">
-      							       <input type="hidden" name="idp" value="<?php echo $idp;?>"/>
-                           <input type="hidden" value="<?php echo $fotop;?>" name="fotop">
+      							    <input type="hidden" name="idp" value="<?php echo $idp;?>"/>
+                                    <input type="hidden" value="<?php echo $fotop;?>" name="fotop">
                                   <p>Apakah Anda yakin mau menghapus Program <b><?php echo $namaprogram;?></b> ini ?</p>
 
                           </div>
@@ -346,6 +348,7 @@
                         <?php echo form_open_multipart('admin/web_admin/up_testimoni');?>
                                 <div class="form-group">
                                     <input type="hidden" name="idt" value="<?php echo $idt;?>">
+                                    <input type="hidden" name="foto" value="<?php echo $foto;?>">
                                     <label for="recipient-name" class="control-label">Nama Testimoni</label>
                                     <input type="text" class="form-control" name="nama_testi" id="recipient-name1" value="<?php echo $nama;?>">
                                 </div>

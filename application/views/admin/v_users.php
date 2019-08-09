@@ -1,9 +1,3 @@
-<?php
-    $query=$this->db->query("SELECT * FROM tbl_inbox WHERE inbox_status='1'");
-    $query2=$this->db->query("SELECT * FROM tbl_komentar WHERE komentar_status='0'");
-    $jum_comment=$query2->num_rows();
-    $jum_pesan=$query->num_rows();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -272,6 +266,7 @@
                                     <div class="form-group">
                                       <label for="recipient-name" class="control-label">Nama</label>
                                       <input type="hidden" name="kode" value="<?php echo $pengguna_id;?>"/>
+                                      <input type="hidden" name="foto" value="<?php echo $pengguna_photo;?>"/>
                                       <input type="text" name="xnama" class="form-control" id="recipient-name" value="<?php echo $pengguna_nama;?>" required>
                                     </div>
                                     <div class="form-group">

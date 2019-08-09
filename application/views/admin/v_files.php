@@ -1,9 +1,3 @@
-<?php
-    $query=$this->db->query("SELECT * FROM tbl_inbox WHERE inbox_status='1'");
-    $query2=$this->db->query("SELECT * FROM tbl_komentar WHERE komentar_status='0'");
-    $jum_comment=$query2->num_rows();
-    $jum_pesan=$query->num_rows();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -134,16 +128,16 @@
                                     </thead>
                                     <tbody>
                                       <?php
-                            					$no=0;
-                              					foreach ($data->result_array() as $i) :
-                              					   $no++;
-                                           $id=$i['file_id'];
-                                           $judul=$i['file_judul'];
-                                           $deskripsi=$i['file_deskripsi'];
-                                           $oleh=$i['file_oleh'];
-                                           $tanggal=$i['tanggal'];
-                                           $download=$i['file_download'];
-                                           $file=$i['file_data'];
+                                        $no=0;
+                                        foreach ($data->result_array() as $i) :
+                                            $no++;
+                                            $id=$i['file_id'];
+                                            $judul=$i['file_judul'];
+                                            $deskripsi=$i['file_deskripsi'];
+                                            $oleh=$i['file_oleh'];
+                                            $tanggal=$i['tanggal'];
+                                            $download=$i['file_download'];
+                                            $file=$i['file_data'];
                                       ?>
                                         <tr>
                                           <td><?php echo $no;?></td>

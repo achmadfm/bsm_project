@@ -275,10 +275,11 @@
 									$agenda_waktu=$g['agenda_waktu'];
 									$agenda_keterangan=$g['agenda_keterangan'];
 									$agenda_author=$g['agenda_author'];
+									$sampul=$g['sampul'];
 									$tanggal=$g['tanggal'];
 								?>
 								<li>
-									<a href="<?php echo base_url().'agenda'?>"><img width="60" height="60" src="<?php echo base_url().'template/images/agenda.png'?>"  alt=" " /></a>
+									<a href="<?php echo base_url().'pengumuman'?>"><img width="60" height="60" src="<?php echo base_url().'template/images/agenda.png'?>"  alt=" " /></a>
 									<br>
 									<h6><strong><?php echo $agenda_nama;?></strong></h6>
 									<i class="fa fa-calendar-o"><strong> Tanggal <?php echo Home::format_tanggal($tanggal);?></strong></i><br>

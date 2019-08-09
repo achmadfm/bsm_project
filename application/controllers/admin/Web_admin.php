@@ -97,27 +97,30 @@
      $this->upload->initialize($config);
      if(!empty($_FILES['filefoto']['name'])) {
        if($this->upload->do_upload('filefoto')) {
-         $gbr=$this->upload->data();
-         $config['image_library']='gd2';
-         $config['source_image']='./template/speech/'.$gbr['file_name'];
-         $config['create_thumb']=FALSE;
-         $config['maintain_ratio']=FALSE;
-         $config['quality']='100%';
-         $config['width']=260;
-         $config['height']=370;
-         $config['new_image']='./template/speech/'.$gbr['file_name'];
-         $this->load->library('image_lib',$config);
-         $this->image_lib->resize();
-         $foto=$gbr['file_name'];
-         $id_speech = $this->input->post('xkode');
-         $nama = $this->input->post('kepsek');
-         $isi = $this->input->post('sambutan');
-         $this->M_web_admin->up_sambutan($id_speech,$nama,$isi,$foto);
-         echo $this->session->set_flashdata('msg','info');
-         redirect('admin/web_admin');
+          $gbr=$this->upload->data();
+          $config['image_library']='gd2';
+          $config['source_image']='./template/speech/'.$gbr['file_name'];
+          $config['create_thumb']=FALSE;
+          $config['maintain_ratio']=FALSE;
+          $config['quality']='100%';
+          $config['width']=260;
+          $config['height']=370;
+          $config['new_image']='./template/speech/'.$gbr['file_name'];
+          $this->load->library('image_lib',$config);
+          $this->image_lib->resize();
+          $fotolama = $this->input->post('foto');
+          $path=base_url().'template/speech/'.$fotolama;
+          unlink($path);
+          $foto=$gbr['file_name'];
+          $id_speech = $this->input->post('xkode');
+          $nama = $this->input->post('kepsek');
+          $isi = $this->input->post('sambutan');
+          $this->M_web_admin->up_sambutan($id_speech,$nama,$isi,$foto);
+          echo $this->session->set_flashdata('msg','info');
+          redirect('admin/web_admin');
        }else{
-         echo $this->session->set_flashdata('msg','error');
-         redirect('admin/web_admin');
+          echo $this->session->set_flashdata('msg','error');
+          redirect('admin/web_admin');
        }
      }else{
        $id_speech = $this->input->post('xkode');
@@ -185,40 +188,43 @@
      $this->upload->initialize($config);
      if (!empty($_FILES['fasilitasfoto']['name'])) {
        if ($this->upload->do_upload('fasilitasfoto')) {
-         $gbr=$this->upload->data();
-         $config['image_library']='gd2';
-         $config['source_image']='./template/fasilitas/'.$gbr['file_name'];
-         $config['create_thumb']=FALSE;
-         $config['maintain_ratio']=FALSE;
-         $config['quality']='100%';
-         $config['width']=600;
-         $config['height']=300;
-         $config['new_image']='./template/fasilitas/'.$gbr['file_name'];
-         $this->load->library('image_lib',$config);
-         $this->image_lib->resize();
-         $foto = $gbr['file_name'];
-         $idf = $this->input->post('idf');
-         $nama = strip_tags($this->input->post('nama_fasilitas'));
-         $deskripsi = $this->input->post('desk');
-         $idunit = $this->input->post('xunit');
-         $data = $this->M_web_admin->get_unit_by_id($idunit);
-         $row = $data->row_array();
-         $idu = $row['id_unit'];
-         $namaunit = $row['singkatan_unit'];
-         $string   = preg_replace('/[^a-zA-Z0-9 \&%|{.}=,?!*()"-_+$@;<>\']/', '', $nama);
-         $trim     = trim($string);
-         $slug     = strtolower(str_replace(" ", "-", $trim));
-         $kode = $this->session->userdata('idadmin');
-         $author = $this->m_pengguna->get_pengguna_login($kode);
-         $user = $author->row_array();
-         $id = $user['pengguna_id'];
-         $username = $user['pengguna_nama'];
-         $this->M_web_admin->update_fasilitas($idf,$nama,$deskripsi,$idu,$namaunit,$id,$username,$foto);
-         echo $this->session->set_flashdata('msg','success2');
-         redirect('admin/web_admin');
+          $gbr=$this->upload->data();
+          $config['image_library']='gd2';
+          $config['source_image']='./template/fasilitas/'.$gbr['file_name'];
+          $config['create_thumb']=FALSE;
+          $config['maintain_ratio']=FALSE;
+          $config['quality']='100%';
+          $config['width']=600;
+          $config['height']=300;
+          $config['new_image']='./template/fasilitas/'.$gbr['file_name'];
+          $this->load->library('image_lib',$config);
+          $this->image_lib->resize();
+          $fotolama = $this->input->post('foto');
+          $path=base_url().'template/fasilitas/'.$fotolama;
+          unlink($path);
+          $foto = $gbr['file_name'];
+          $idf = $this->input->post('idf');
+          $nama = strip_tags($this->input->post('nama_fasilitas'));
+          $deskripsi = $this->input->post('desk');
+          $idunit = $this->input->post('xunit');
+          $data = $this->M_web_admin->get_unit_by_id($idunit);
+          $row = $data->row_array();
+          $idu = $row['id_unit'];
+          $namaunit = $row['singkatan_unit'];
+          $string   = preg_replace('/[^a-zA-Z0-9 \&%|{.}=,?!*()"-_+$@;<>\']/', '', $nama);
+          $trim     = trim($string);
+          $slug     = strtolower(str_replace(" ", "-", $trim));
+          $kode = $this->session->userdata('idadmin');
+          $author = $this->m_pengguna->get_pengguna_login($kode);
+          $user = $author->row_array();
+          $id = $user['pengguna_id'];
+          $username = $user['pengguna_nama'];
+          $this->M_web_admin->update_fasilitas($idf,$nama,$deskripsi,$idu,$namaunit,$id,$username,$foto);
+          echo $this->session->set_flashdata('msg','success2');
+          redirect('admin/web_admin');
        }else{
-         echo $this->session->set_flashdata('msg','error');
-         redirect('admin/web_admin');
+          echo $this->session->set_flashdata('msg','error');
+          redirect('admin/web_admin');
        }
      }else{
        $idf = $this->input->post('idf');
@@ -320,6 +326,9 @@
          $config['new_image']='./template/program/'.$gbr['file_name'];
          $this->load->library('image_lib',$config);
          $this->image_lib->resize();
+         $fotolama = $this->input->post('foto');
+         $path=base_url().'template/program/'.$fotolama;
+         unlink($path); 
          $foto = $gbr['file_name'];
          $idp = $this->input->post('idp');
          $nama = $this->input->post('nama_program');
@@ -436,6 +445,9 @@
          $config['new_image']='./template/testimoni/'.$gbr['file_name'];
          $this->load->library('image_lib',$config);
          $this->image_lib->resize();
+         $fotolama = $this->input->post('foto');
+         $path=base_url().'template/testimoni/'.$fotolama;
+         unlink($path); 
          $foto = $gbr['file_name'];
          $idt = $this->input->post('idt');
          $nama = $this->input->post('nama_testi');

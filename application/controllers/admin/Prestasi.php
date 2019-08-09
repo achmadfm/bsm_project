@@ -128,6 +128,9 @@
               $deskripsi=$this->input->post('xdeskripsi');
               $tanggal=strip_tags($this->input->post('xtanggal'));
               $id_kategori=strip_tags($this->input->post('xkategori'));
+              $data=$this->input->post('sampul')
+              $path='./template/stuents/prestasi/'.$data;
+              unlink($path);
               $data=$this->m_katprestasi->get_prestasi_byid($id_kategori);
               $q=$data->row_array();
               $katnama=$q['nama_prestasi'];
@@ -180,6 +183,9 @@
 
     function hapus_prestasi(){
       $kode=strip_tags($this->input->post('kode'));
+      $data=$this->input->post('sampul')
+      $path='./template/students/prestasi/'.$data;
+		  unlink($path);
       $this->m_prestasi->delete_prestasi($kode);
       echo $this->session->set_flashdata('msg','success-hapus');
       redirect('admin/prestasi');

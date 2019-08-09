@@ -29,32 +29,32 @@ class Galeri extends CI_Controller{
 	            {
 	                if ($this->upload->do_upload('filefoto'))
 	                {
-                      $gbr = $this->upload->data();
-                      //Compress Image
-                      $config['image_library']='gd2';
-                      $config['source_image']='./template/galeri/'.$gbr['file_name'];
-                      $config['create_thumb']= FALSE;
-                      $config['maintain_ratio']= FALSE;
-                      $config['quality']= '100%';
-                      $config['width']= 1000;
-                      $config['height']= 1000;
-                      $config['new_image']= './template/galeri/'.$gbr['file_name'];
-                      $this->load->library('image_lib', $config);
-                      $this->image_lib->resize();
+						$gbr = $this->upload->data();
+						//Compress Image
+						$config['image_library']='gd2';
+						$config['source_image']='./template/galeri/'.$gbr['file_name'];
+						$config['create_thumb']= FALSE;
+						$config['maintain_ratio']= FALSE;
+						$config['quality']= '100%';
+						$config['width']= 1000;
+						$config['height']= 1000;
+						$config['new_image']= './template/galeri/'.$gbr['file_name'];
+						$this->load->library('image_lib', $config);
+						$this->image_lib->resize();
 
-                      $gambar=$gbr['file_name'];
-                      $judul=strip_tags($this->input->post('xjudul'));
-											$caption=strip_tags($this->input->post('xcaption'));
-											$album=strip_tags($this->input->post('xalbum'));
-											$kode=$this->session->userdata('idadmin');
-											$user=$this->m_pengguna->get_pengguna_login($kode);
-											$p=$user->row_array();
-											$user_id=$p['pengguna_id'];
-											$user_nama=$p['pengguna_nama'];
-											$this->m_galeri->simpan_galeri($judul,$caption,$album,$user_id,$user_nama,$gambar);
-											echo $this->session->set_flashdata('msg','success');
-											redirect('admin/galeri');
-									}else{
+						$gambar=$gbr['file_name'];
+						$judul=strip_tags($this->input->post('xjudul'));
+						$caption=strip_tags($this->input->post('xcaption'));
+						$album=strip_tags($this->input->post('xalbum'));
+						$kode=$this->session->userdata('idadmin');
+						$user=$this->m_pengguna->get_pengguna_login($kode);
+						$p=$user->row_array();
+						$user_id=$p['pengguna_id'];
+						$user_nama=$p['pengguna_nama'];
+						$this->m_galeri->simpan_galeri($judul,$caption,$album,$user_id,$user_nama,$gambar);
+						echo $this->session->set_flashdata('msg','success');
+						redirect('admin/galeri');
+					}else{
 	                    echo $this->session->set_flashdata('msg','warning');
 	                    redirect('admin/galeri');
 	                }
@@ -67,65 +67,64 @@ class Galeri extends CI_Controller{
 
 	function update_galeri(){
 
-	            $config['upload_path'] = './template/galeri/'; //path folder
-	            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-	            $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+		$config['upload_path'] = './template/galeri/'; //path folder
+		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+		$config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
-	            $this->upload->initialize($config);
-	            if(!empty($_FILES['filefoto']['name']))
-	            {
-	                if ($this->upload->do_upload('filefoto'))
-	                {
-	                        $gbr = $this->upload->data();
-	                        //Compress Image
-	                        $config['image_library']='gd2';
-	                        $config['source_image']='./template/galeri/'.$gbr['file_name'];
-	                        $config['create_thumb']= FALSE;
-	                        $config['maintain_ratio']= FALSE;
-													$config['quality']= '100%';
-	                        $config['width']= 1000;
-	                        $config['height']= 1000;
-	                        $config['new_image']= './template/galeri/'.$gbr['file_name'];
-	                        $this->load->library('image_lib', $config);
-	                        $this->image_lib->resize();
+		$this->upload->initialize($config);
+		if(!empty($_FILES['filefoto']['name']))
+		{
+			if ($this->upload->do_upload('filefoto'))
+			{
+					$gbr = $this->upload->data();
+					//Compress Image
+					$config['image_library']='gd2';
+					$config['source_image']='./template/galeri/'.$gbr['file_name'];
+					$config['create_thumb']= FALSE;
+					$config['maintain_ratio']= FALSE;
+					$config['quality']= '100%';
+					$config['width']= 1000;
+					$config['height']= 1000;
+					$config['new_image']= './template/galeri/'.$gbr['file_name'];
+					$this->load->library('image_lib', $config);
+					$this->image_lib->resize();
 
-	                        $gambar=$gbr['file_name'];
-	                        $galeri_id=$this->input->post('kode');
-	                        $judul=strip_tags($this->input->post('xjudul'));
-													$caption=strip_tags($this->input->post('xcaption'));
-													$album=strip_tags($this->input->post('xalbum'));
-													$images=$this->input->post('gambar');
-													$path='./template/galeri/'.$images;
-													unlink($path);
-													$kode=$this->session->userdata('idadmin');
-													$user=$this->m_pengguna->get_pengguna_login($kode);
-													$p=$user->row_array();
-													$user_id=$p['pengguna_id'];
-													$user_nama=$p['pengguna_nama'];
-													$this->m_galeri->update_galeri($galeri_id,$judul,$caption,$album,$user_id,$user_nama,$gambar);
-													echo $this->session->set_flashdata('msg','info');
-													redirect('admin/galeri');
+					$gambar=$gbr['file_name'];
+					$galeri_id=$this->input->post('kode');
+					$judul=strip_tags($this->input->post('xjudul'));
+					$caption=strip_tags($this->input->post('xcaption'));
+					$album=strip_tags($this->input->post('xalbum'));
+					$images=$this->input->post('gambar');
+					$path='./template/galeri/'.$images;
+					unlink($path);
+					$kode=$this->session->userdata('idadmin');
+					$user=$this->m_pengguna->get_pengguna_login($kode);
+					$p=$user->row_array();
+					$user_id=$p['pengguna_id'];
+					$user_nama=$p['pengguna_nama'];
+					$this->m_galeri->update_galeri($galeri_id,$judul,$caption,$album,$user_id,$user_nama,$gambar);
+					echo $this->session->set_flashdata('msg','info');
+					redirect('admin/galeri');
 
-	                }else{
-	                    echo $this->session->set_flashdata('msg','warning');
-	                    redirect('admin/galeri');
-	                }
+			}else{
+				echo $this->session->set_flashdata('msg','warning');
+				redirect('admin/galeri');
+			}
 
-	            }else{
-							$galeri_id=$this->input->post('kode');
-              $judul=strip_tags($this->input->post('xjudul'));
-							$caption=strip_tags($this->input->post('xcaption'));
-							$album=strip_tags($this->input->post('xalbum'));
-							$kode=$this->session->userdata('idadmin');
-							$user=$this->m_pengguna->get_pengguna_login($kode);
-							$p=$user->row_array();
-							$user_id=$p['pengguna_id'];
-							$user_nama=$p['pengguna_nama'];
-							$this->m_galeri->update_galeri_tanpa_img($galeri_id,$judul,$caption,$album,$user_id,$user_nama);
-							echo $this->session->set_flashdata('msg','info');
-							redirect('admin/galeri');
-	            }
-
+		}else{
+			$galeri_id=$this->input->post('kode');
+			$judul=strip_tags($this->input->post('xjudul'));
+			$caption=strip_tags($this->input->post('xcaption'));
+			$album=strip_tags($this->input->post('xalbum'));
+			$kode=$this->session->userdata('idadmin');
+			$user=$this->m_pengguna->get_pengguna_login($kode);
+			$p=$user->row_array();
+			$user_id=$p['pengguna_id'];
+			$user_nama=$p['pengguna_nama'];
+			$this->m_galeri->update_galeri_tanpa_img($galeri_id,$judul,$caption,$album,$user_id,$user_nama);
+			echo $this->session->set_flashdata('msg','info');
+			redirect('admin/galeri');
+		}
 	}
 
 	function hapus_galeri(){

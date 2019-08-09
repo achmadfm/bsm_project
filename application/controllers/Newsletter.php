@@ -1,5 +1,5 @@
 <?php
-class Download extends CI_Controller{
+class Newsletter extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model('m_files');

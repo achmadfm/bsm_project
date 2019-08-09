@@ -136,11 +136,11 @@
 							<ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter">
 								<li data-option-value="*" class="active"><a href="#">Lihat Semua</a></li>
 								<?php
-                  foreach ($alb->result_array() as $i) {
-                    $alb_id=$i['album_id'];
-                    $alb_nama=$i['album_nama'];
+									foreach ($alb->result_array() as $i) {
+									$alb_id=$i['album_id'];
+									$alb_nama=$i['album_nama'];
 
-                ?>
+								?>
 								<li data-option-value=".<?php echo $alb_id?>"><a href="#"><?php echo $alb_nama;?></a></li>
 							<?php }?>
 							</ul>
