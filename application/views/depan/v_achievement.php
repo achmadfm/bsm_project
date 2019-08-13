@@ -48,6 +48,32 @@
 
 	</head>
 	<body class="loading-overlay-showing" data-loading-overlay>
+			<!-- Load Facebook SDK for JavaScript -->
+			<div id="fb-root"></div>
+				<script>
+					window.fbAsyncInit = function() {
+					FB.init({
+						xfbml            : true,
+						version          : 'v4.0'
+					});
+					};
+
+					(function(d, s, id) {
+					var js, fjs = d.getElementsByTagName(s)[0];
+					if (d.getElementById(id)) return;
+					js = d.createElement(s); js.id = id;
+					js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+					fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));</script>
+
+				<!-- Your customer chat code -->
+				<div class="fb-customerchat"
+					attribution=setup_tool
+					page_id="1778541652456050"
+					theme_color="#0084ff"
+					logged_in_greeting="Halo! ada yang bisa kami bantu? silahkan chat disini yah"
+					logged_out_greeting="Halo! ada yang bisa kami bantu? silahkan chat disini yah">
+			</div>
 		<div class="loading-overlay">
 			<div class="bounce-loader">
 				<div class="bounce1"></div>
@@ -162,7 +188,6 @@
 							<ul class="nav nav-list flex-column">
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>">Home</a></li>
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('berita')?>">Berita Sekolah</a></li>
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('berita_boarding')?>">Berita Asrama</a></li>
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('insight_reading')?>">Insight Reading</a></li>
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('kontak')?>">Hubungi Kami</a></li>
 							</ul>
@@ -199,18 +224,6 @@
 
 		<!-- Theme Initialization Files -->
 		<script src="<?php echo base_url()?>template/js/theme.init.js"></script>
-		
-            <script type="text/javascript">
-                var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-                (function(){
-                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-                s1.async=true;
-                s1.src='https://embed.tawk.to/5a9e2f6c4b401e45400d6fbf/default';
-                s1.charset='UTF-8';
-                s1.setAttribute('crossorigin','*');
-                s0.parentNode.insertBefore(s1,s0);
-                })();
-            </script>
             
 	</body>
 </html>
