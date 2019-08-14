@@ -169,6 +169,7 @@
 								?>
 								<li data-option-value=".<?php echo $alb_id?>"><a href="#"><?php echo $alb_nama;?></a></li>
 							<?php }?>
+								<li data-option-value=".instagram"><a href="#">Instagram</a></li>
 							</ul>
 
 							<hr>
@@ -181,7 +182,7 @@
                                           foreach ($all_galeri->result_array() as $a) {
                                             $id=$a['galeri_album_id'];
                                             $judul=$a['galeri_judul'];
-                    												$caption=$a['galeri_caption'];
+                    						$caption=$a['galeri_caption'];
                                             $gambar=$a['galeri_gambar'];
                     
                                         ?>
@@ -206,12 +207,18 @@
 										</li>
 									<?php }?>
 									</ul>
+									<h2><center>Our Gallery From Instagram</center></h2>
+									<div class="row">
+										<div id="instafeed">
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					
 				</div>
-
+				
 			<?php $this->load->view('depan/v_footer');?>
 		</div>
 
@@ -242,6 +249,8 @@
 
 		<!-- Examples -->
 		<script src="<?php echo base_url()?>template/js/examples/examples.gallery.js"></script>
+		<script src="<?php echo base_url()?>template/js/instagram/instafeed.min.js"></script>
+		<script src="<?php echo base_url()?>template/js/instagram/custom.js"></script>
 
 		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
 		<script>
