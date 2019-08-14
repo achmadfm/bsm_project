@@ -205,7 +205,7 @@
 										<p><?php echo $blog;?></p>
 										<div class="post-block post-share">
 											<h3 class="heading-primary"><i class="fa fa-share"></i>Bagikan</h3>
-											<div class="addthis_inline_share_toolbox"></div>
+											<div class="addthis_inline_share_toolbox_3a88"></div>
 											<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a3c9df7bac34d25"></script>
 
 										</div>
