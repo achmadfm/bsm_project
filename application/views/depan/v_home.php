@@ -320,22 +320,8 @@
 								<div class="box-content">
 									<h4 class="text-uppercase">Galeri</h4>
 									<ul class="thumbnail-gallery" data-plugin-lightbox data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}">
-										<?php
-                                          foreach ($galeri->result_array() as $g) {
-                                               $galeri_id=$g['galeri_id'];
-                                               $galeri_judul=$g['galeri_judul'];
-                                               $galeri_tanggal=$g['tanggal'];
-                                               $galeri_author=$g['galeri_author'];
-                                               $galeri_gambar=$g['galeri_gambar'];
-                                               $galeri_album_id=$g['galeri_album_id'];
-                                               $galeri_album_nama=$g['album_nama'];
-                                      	?>
-										<li>
-											<a href="<?php echo base_url().'template/galeri/'.$galeri_gambar;?>"><img width="100" height="100" src="<?php echo base_url().'template/galeri/'.$galeri_gambar;?>"  alt=""></a>
-											<h4><?php echo $galeri_judul;?></h4>
-											<em><?php echo 'Posted : '.Home::format_tanggal($galeri_tanggal);;?></em>
-										</li>
-										<?php }?>
+										<div id="instafeedhome">
+										</div>
 									</ul>
 								</div>
 							</div>
@@ -433,5 +419,7 @@
 		<script src="<?php echo base_url()?>template/js/views/view.home.js"></script>
 
 		<script src="<?php echo base_url()?>template/js/theme.init.js"></script>
+		<script src="<?php echo base_url()?>template/js/instagram/instafeed.min.js"></script>
+		<script src="<?php echo base_url()?>template/js/instagram/home.js"></script>
 	</body>
 </html>
