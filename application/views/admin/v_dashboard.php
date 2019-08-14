@@ -29,15 +29,13 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 <?php
-    /* Mengambil query report*/
+
     if(is_array($visitor)){
       foreach($visitor as $result){
           $bulan[] = $result->tgl; //ambil bulan
           $value[] = (float) $result->jumlah; //ambil nilai
         }
     }
-    /* end mengambil query*/
-
 ?>
 </head>
 
@@ -252,11 +250,9 @@
     <!--Style Switcher -->
     <script src="<?php echo base_url()?>plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
     <script>
-
             var lineChartData = {
                 labels : <?php echo json_encode($bulan);?>,
                 datasets : [
-
                     {
                         fillColor: "rgba(60,141,188,0.9)",
                         strokeColor: "rgba(60,141,188,0.8)",
