@@ -344,14 +344,14 @@
 							</div>
 							<div class="col-sm-6 col-lg-4">
 								<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="600">
-								<iframe width="320" height="220" src="https://www.youtube.com/embed/VTfUCu6uCP8" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									<label><b>Ekskul Robotika Bosowa School Makassar</b></label>
+									<iframe width="320" height="220" src="https://www.youtube.com/embed/gBRg5wClosE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									<label><b>The Graduation of Bosowa School Makassar 2018/2019</b></label>
 								</div>
 							</div>
 							<div class="col-sm-6 col-lg-4">
 								<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="900">
-								<iframe width="320" height="220" src="https://www.youtube.com/embed/6PF4wBRcV7E" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									<label><b>Tutorial Pendaftaran Siswa Baru Bosowa School Makassar</b></label>
+								<iframe width="320" height="220" src="https://www.youtube.com/embed/goOzyS_V8P0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									<label><b>Semester Celebration SAB</b></label>
 								</div>
 							</div>
 						</div>
