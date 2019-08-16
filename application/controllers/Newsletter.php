@@ -7,8 +7,41 @@ class Newsletter extends CI_Controller{
 	}
 	
 	function index(){
-		$x['data']=$this->m_files->get_all_files();
-		$this->load->view('depan/v_download',$x);
+		$jum=$this->m_files->get_files_home();
+		$page=$this->uri->segment(3);
+		if(!$page):
+			$offset = 0;
+		else:
+			$offset = $page;
+		endif;
+		$limit=2;
+		$config['base_url'] = base_url() . 'newsletter/index/';
+		$config['total_rows'] = $jum->num_rows();
+		$config['per_page'] = $limit;
+		$config['uri_segment'] = 3;
+		$config['full_tag_open'] = '<ul class="pagination pagination-lg pull-right">';
+		$config['full_tag_close'] = '</ul>';
+		$config['first_link'] = '&laquo; First';
+		$config['first_tag_open'] = '<li>';
+		$config['first_tag_close'] = '</li>';
+		$config['last_link'] = 'Last &raquo;';
+		$config['last_tag_open'] = '<li>';
+		$config['last_tag_close'] = '</li>';
+		$config['next_link'] = 'Next &rarr;';
+		$config['next_tag_open'] = '<li>';
+		$config['next_tag_close'] = '</li>';
+		$config['prev_link'] = '&larr; Prev';
+		$config['prev_tag_open'] = '<li>';
+		$config['prev_tag_close'] = '</li>';
+		$config['cur_tag_open'] = '<li class="active"><a href="">';
+    	$config['cur_tag_close'] = '</a></li>';
+		$config['num_tag_open'] = '<li>';
+    	$config['num_tag_close'] = '</li>';
+    	$this->pagination->initialize($config);
+		$x['page'] =$this->pagination->create_links();
+		$x['files'] = $this->m_files->get_files_home();
+		$x['data'] = $this->m_files->get_files_perpage($offset,$limit);
+		$this->load->view('depan/v_newsletter',$x);
 	}
 
 	function get_file(){

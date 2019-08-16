@@ -45,9 +45,7 @@ class Files extends CI_Controller{
 				$file=$gbr['file_name'];
 				$judul=strip_tags($this->input->post('xjudul'));
 				$deskripsi=$this->input->post('xdeskripsi');
-				$oleh=strip_tags($this->input->post('xoleh'));
-
-				$this->m_files->simpan_file($judul,$deskripsi,$oleh,$file);
+				$this->m_files->simpan_file($judul,$deskripsi,$file);
 				echo $this->session->set_flashdata('msg','success');
 				redirect('admin/files');
 			}else{
@@ -77,11 +75,10 @@ class Files extends CI_Controller{
 				$kode=$this->input->post('kode');
 				$judul=strip_tags($this->input->post('xjudul'));
 				$deskripsi=$this->input->post('xdeskripsi');
-				$oleh=strip_tags($this->input->post('xoleh'));
 				$data=$this->input->post('file');
 				$path='./template/files/'.$data;
 				unlink($path);
-				$this->m_files->update_file($kode,$judul,$deskripsi,$oleh,$file);
+				$this->m_files->update_file($kode,$judul,$deskripsi,$file);
 				echo $this->session->set_flashdata('msg','info');
 				redirect('admin/files');
 
@@ -94,8 +91,7 @@ class Files extends CI_Controller{
 				$kode=$this->input->post('kode');
 				$judul=strip_tags($this->input->post('xjudul'));
 				$deskripsi=$this->input->post('xdeskripsi');
-				$oleh=strip_tags($this->input->post('xoleh'));
-				$this->m_files->update_file_tanpa_file($kode,$judul,$deskripsi,$oleh);
+				$this->m_files->update_file_tanpa_file($kode,$judul,$deskripsi);
 				echo $this->session->set_flashdata('msg','info');
 				redirect('admin/files');
 		}
