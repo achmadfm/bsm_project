@@ -318,7 +318,7 @@
 						<div class="col-lg-12">
 							<div class="featured-box featured-box-primary">
 								<div class="box-content">
-									<h4 class="text-uppercase">Galeri</h4>
+									<h4 class="text-uppercase">Galeri Instagram</h4>
 									<ul class="thumbnail-gallery" data-plugin-lightbox data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}">
 										<div id="instafeedhome">
 										</div>
