@@ -206,14 +206,8 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="call-to-action-content align-left pb-md mb-xl ml-none">
-										<h3 class="text-color-light mb-none">Pendaftaran Siswa Baru Tahun Ajaran 2019 - 2020 <strong>Telah DiBuka</strong></h3>
+										<h3 class="text-color-light mb-none">Pendaftaran Siswa Baru Bosowa School Makassar <strong>Telah DiBuka</strong></h3>
 										<br>
-										<p class="lead mb">
-										    <strong>Gelombang : </strong> <br>
-										    I : November 2018 - Januari 2019<br>
-										   II : Februari 2019 - April 2019<br>
-										  III : Mei 2019 - Juni 2019
-										</p>
 										 <a href="http://bit.ly/Register_BSM" target="_blank" class="btn btn-md btn-warning">Daftar? Klik disini!</a>
 									</div>
 								</div>
@@ -226,7 +220,7 @@
 				<hr>
 
 					<div class="container">
-					  <div class="row">
+					  	<div class="row">
 							<div class="col-lg-4">
 							<div class="featured-box featured-box-primary">
 								<div class="box-content">
@@ -239,8 +233,8 @@
 											<br>
 											<h4><strong><?php echo $row->tulisan_judul;?></strong></h4>
 											<i class="fa fa-calendar-o"></i><strong><em> Posted : <?php echo Home::format_tanggal($row->tanggal);?></em></strong><br>
-                      <i class="fa fa-user-circle"></i><em> (Editor : <?php echo $row->tulisan_author;?>)</em>
-                      <?php echo limit_words($row->tulisan_isi,12).'...';?>
+                     						<i class="fa fa-user-circle"></i><em> (Editor : <?php echo $row->tulisan_author;?>)</em>
+                      						<?php echo limit_words($row->tulisan_isi,12).'...';?>
 										</li>
 										<hr>
 									<?php endforeach;?>
@@ -250,72 +244,79 @@
 							</div>
 						</div>
 
-					<div class="col-lg-4">
-						<div class="featured-box featured-box-primary">
-							<div class="box-content">
-								<h4 class="text-uppercase">Pengumuman</h4>
-								<ul class="list list-icons text-left">
-									<?php
-					          $no=0;
-					            foreach ($pengumuman->result_array() as $p) :
-					               $no++;
-					               $id=$p['pengumuman_id'];
-					               $judul=$p['pengumuman_judul'];
-					               $deskripsi=$p['pengumuman_deskripsi'];
-					               $author=$p['pengumuman_author'];
-					               $tanggal=$p['tanggal'];
+						<div class="col-lg-4">
+							<div class="featured-box featured-box-primary">
+								<div class="box-content">
+									<h4 class="text-uppercase">Pengumuman</h4>
+									<ul class="list list-icons text-left">
+										<?php
+											$no=0;
+											foreach ($pengumuman->result_array() as $p) :
+											$no++;
+											$id=$p['pengumuman_id'];
+											$judul=$p['pengumuman_judul'];
+											$deskripsi=$p['pengumuman_deskripsi'];
+											$author=$p['pengumuman_author'];
+											$tanggal=$p['tanggal'];
 
-					        ?>
-									<li>
-										<center><a href="<?php echo base_url().'pengumuman'?>"><img width="100" height="100" src="<?php echo base_url().'template/toas.png'?>"  alt=" " /></a></center>
-										<br>
-										<h6><strong><?php echo $judul;?></strong></h6>
-										<i class="fa fa-calendar-o"><strong><em> Posted : <?php echo Home::format_tanggal($tanggal);?></em></strong></i><br>
-										<i class="fa fa-user-circle"> (Editor : <?php echo $author;?>)</i><br>
-										<?php echo limit_words($deskripsi,15).'...';?>
-									</li>
-									<hr>
-								<?php endforeach;?>
-								</ul>
-								<a class="btn btn-primary" href="<?php echo base_url('pengumuman')?>">Lihat Semua</a>
+										?>
+										<li>
+											<center><a href="<?php echo base_url().'pengumuman'?>"><img width="100" height="100" src="<?php echo base_url().'template/toas.png'?>"  alt=" " /></a></center>
+											<br>
+											<h6><strong><?php echo $judul;?></strong></h6>
+											<i class="fa fa-calendar-o"><strong><em> Posted : <?php echo Home::format_tanggal($tanggal);?></em></strong></i><br>
+											<i class="fa fa-user-circle"> (Editor : <?php echo $author;?>)</i><br>
+											<?php echo limit_words($deskripsi,15).'...';?>
+										</li>
+										<hr>
+										<?php endforeach;?>
+									</ul>
+								<?php
+									$data = $pengumuman->num_rows();
+									if(empty($data)):
+								?>
+								<?php else:?>
+									<a class="btn btn-primary" href="<?php echo base_url('pengumuman')?>">Lihat Semua</a>
+									<?php endif;?>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="featured-box featured-box-primary">
+									<div class="box-content">
+										<h4 class="text-uppercase">Acara</h4>
+										<ul class="list list-icons text-left">
+											<?php
+												$no=0;
+												foreach ($agenda->result_array() as $g) :
+												$no++;
+												$agenda_id=$g['agenda_id'];
+												$agenda_nama=$g['agenda_nama'];
+												$agenda_deskripsi=$g['agenda_deskripsi'];
+												$agenda_mulai=$g['agenda_mulai'];
+												$agenda_selesai=$g['agenda_selesai'];
+												$agenda_tempat=$g['agenda_tempat'];
+												$agenda_waktu=$g['agenda_waktu'];
+												$agenda_keterangan=$g['agenda_keterangan'];
+												$agenda_author=$g['agenda_author'];
+												$tanggal=$g['tanggal'];
+											?>
+											<li>
+												<center><img width="100" height="100" src="<?php echo base_url().'template/agenda.png'?>"  alt=" " /></center><br>
+												<center><h6><strong><a href="<?php echo base_url().'pengumuman'?>"><?php echo $agenda_nama;?></a></strong></h6></center>
+												<i class="fa fa-calendar-o"><strong> Posted : <?php echo Home::format_tanggal($tanggal);?></strong></i><br>
+												<?php echo limit_words($agenda_deskripsi,10).'...'?>
+											</li>
+											<hr>
+										<?php endforeach;?>
+										</ul>
+
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
 					
 					
-				<div class="col-lg-4">
-					<div class="featured-box featured-box-primary">
-						<div class="box-content">
-							<h4 class="text-uppercase">Acara</h4>
-							<ul class="list list-icons text-left">
-								<?php
-									$no=0;
-									foreach ($agenda->result_array() as $g) :
-									$no++;
-									$agenda_id=$g['agenda_id'];
-									$agenda_nama=$g['agenda_nama'];
-									$agenda_deskripsi=$g['agenda_deskripsi'];
-									$agenda_mulai=$g['agenda_mulai'];
-									$agenda_selesai=$g['agenda_selesai'];
-									$agenda_tempat=$g['agenda_tempat'];
-									$agenda_waktu=$g['agenda_waktu'];
-									$agenda_keterangan=$g['agenda_keterangan'];
-									$agenda_author=$g['agenda_author'];
-									$tanggal=$g['tanggal'];
-								?>
-								<li>
-									<center><img width="100" height="100" src="<?php echo base_url().'template/agenda.png'?>"  alt=" " /></center><br>
-									<center><h6><strong><a href="<?php echo base_url().'pengumuman'?>"><?php echo $agenda_nama;?></a></strong></h6></center>
-									<i class="fa fa-calendar-o"><strong> Posted : <?php echo Home::format_tanggal($tanggal);?></strong></i><br>
-									<?php echo limit_words($agenda_deskripsi,10).'...'?>
-								</li>
-								<hr>
-							<?php endforeach;?>
-							</ul>
-
-						</div>
-					</div>
-						<div class="col-lg-12">
+						<div class="col-lg-4">
 							<div class="featured-box featured-box-primary">
 								<div class="box-content">
 									<h4 class="text-uppercase">Galeri Instagram</h4>
@@ -326,7 +327,6 @@
 								</div>
 							</div>
 						</div>
-				</div>
 						
 					  </div>
 					</div>
