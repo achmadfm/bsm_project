@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title>Berita Umum / Media Cetak | Bosowa School Makassar</title>
+		<title>Berita Umum / Media Massa | Bosowa School Makassar</title>
 
 		<meta name="keywords" content="Menyajikan Informasi Seputar Sekolah, Asrama dan Pendaftaran Siswa Baru" />
 		<meta name="description" content="Selamat Datang di Website Bosowa School Makassar, adalah Website Profil yang memberikan layanan informasi seputar kegiatan Sekolah, Asrama dan Pendaftaran Siswa Baru" />
@@ -143,7 +143,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<h1>Berita Umum / Media Cetak</h1>
+								<h1>Berita Umum / Media Massa</h1>
 							</div>
 						</div>
 					</div>
