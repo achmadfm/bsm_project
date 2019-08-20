@@ -43,6 +43,9 @@
             $kode=$this->input->post('kode');
             $nama=$this->input->post('xnama');
             $motto=$this->input->post('xmotto');
+            $gambar=$this->input->post('gambar');
+            $path='./template/users/'.$gambar;
+            unlink($path);
     				$username=$this->input->post('xusername');
     				$password=$this->input->post('xpassword');
         		$konfirm_password=$this->input->post('xpassword2');

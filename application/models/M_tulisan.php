@@ -5,6 +5,11 @@ class M_tulisan extends CI_Model{
 		$hsl=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_tulisan ORDER BY tulisan_id DESC");
 		return $hsl;
 	}
+
+	function get_all_tulisan_by_jenis(){
+		$hsl=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_tulisan WHERE nama_jenis='Umum' ORDER BY tulisan_id DESC");
+		return $hsl;
+	}
 	
 	public function view_where($table,$data){
         $this->db->where($data);
@@ -16,20 +21,20 @@ class M_tulisan extends CI_Model{
 		return $hsl;
 	}
 
-	function simpan_tulisan($judul,$isi,$kategori_id,$kategori_nama,$id_jenis,$nama_jenis,$user_id,$user_nama,$gambar,$imgslider,$slug){
-		$hsl=$this->db->query("insert into tbl_tulisan(tulisan_judul,tulisan_isi,tulisan_kategori_id,tulisan_kategori_nama,id_jenis,nama_jenis,tulisan_pengguna_id,tulisan_author,tulisan_gambar,tulisan_img_slider,tulisan_slug) values ('$judul','$isi','$kategori_id','$kategori_nama','$id_jenis','$nama_jenis','$user_id','$user_nama','$gambar','$imgslider','$slug')");
+	function simpan_tulisan($judul,$isi,$kategori_id,$kategori_nama,$id_jenis,$nama_jenis,$user_id,$user_nama,$penulis,$gambar,$imgslider,$slug){
+		$hsl=$this->db->query("insert into tbl_tulisan(tulisan_judul,tulisan_isi,tulisan_kategori_id,tulisan_kategori_nama,id_jenis,nama_jenis,tulisan_pengguna_id,tulisan_author,tulisan_penulis,tulisan_gambar,tulisan_img_slider,tulisan_slug) values ('$judul','$isi','$kategori_id','$kategori_nama','$id_jenis','$nama_jenis','$user_id','$user_nama','$penulis','$gambar','$imgslider','$slug')");
 		return $hsl;
 	}
 	function get_tulisan_by_kode($kode){
 		$hsl=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_tulisan where tulisan_id='$kode'");
 		return $hsl;
 	}
-	function update_tulisan($tulisan_id,$judul,$isi,$kategori_id,$kategori_nama,$id_jenis,$nama_jenis,$user_id,$user_nama,$gambar,$imgslider,$slug){
-		$hsl=$this->db->query("update tbl_tulisan set tulisan_judul='$judul',tulisan_isi='$isi',tulisan_kategori_id='$kategori_id',tulisan_kategori_nama='$kategori_nama',id_jenis='$id_jenis',nama_jenis='$nama_jenis',tulisan_pengguna_id='$user_id',tulisan_author='$user_nama',tulisan_gambar='$gambar', tulisan_img_slider='$imgslider', tulisan_slug='$slug' where tulisan_id='$tulisan_id'");
+	function update_tulisan($tulisan_id,$judul,$isi,$kategori_id,$kategori_nama,$id_jenis,$nama_jenis,$user_id,$user_nama,$penulis,$gambar,$imgslider,$slug){
+		$hsl=$this->db->query("update tbl_tulisan set tulisan_judul='$judul',tulisan_isi='$isi',tulisan_kategori_id='$kategori_id',tulisan_kategori_nama='$kategori_nama',id_jenis='$id_jenis',nama_jenis='$nama_jenis',tulisan_pengguna_id='$user_id',tulisan_author='$user_nama',tulisan_penulis='$penulis',tulisan_gambar='$gambar', tulisan_img_slider='$imgslider', tulisan_slug='$slug' where tulisan_id='$tulisan_id'");
 		return $hsl;
 	}
-	function update_tulisan_tanpa_img($tulisan_id,$judul,$isi,$kategori_id,$kategori_nama,$id_jenis,$nama_jenis,$user_id,$user_nama,$imgslider,$slug){
-		$hsl=$this->db->query("update tbl_tulisan set tulisan_judul='$judul',tulisan_isi='$isi',tulisan_kategori_id='$kategori_id',tulisan_kategori_nama='$kategori_nama',id_jenis='$id_jenis',nama_jenis='$nama_jenis',tulisan_pengguna_id='$user_id',tulisan_author='$user_nama', tulisan_img_slider='$imgslider', tulisan_slug='$slug' where tulisan_id='$tulisan_id'");
+	function update_tulisan_tanpa_img($tulisan_id,$judul,$isi,$kategori_id,$kategori_nama,$id_jenis,$nama_jenis,$user_id,$user_nama,$penulis,$imgslider,$slug){
+		$hsl=$this->db->query("update tbl_tulisan set tulisan_judul='$judul',tulisan_isi='$isi',tulisan_kategori_id='$kategori_id',tulisan_kategori_nama='$kategori_nama',id_jenis='$id_jenis',nama_jenis='$nama_jenis',tulisan_pengguna_id='$user_id',tulisan_author='$user_nama',tulisan_penulis='$penulis', tulisan_img_slider='$imgslider', tulisan_slug='$slug' where tulisan_id='$tulisan_id'");
 		return $hsl;
 	}
 	function hapus_tulisan($kode){
@@ -44,7 +49,12 @@ class M_tulisan extends CI_Model{
 	}
 
 	function berita_perpage($offset,$limit){
-		$hsl=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_tulisan WHERE nama_jenis='School' ORDER BY tulisan_id DESC limit $offset,$limit");
+		$hsl=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_tulisan ORDER BY tulisan_id DESC limit $offset,$limit");
+		return $hsl;
+	}
+
+	function beritaumum_perpage($offset,$limit){
+		$hsl=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_tulisan WHERE nama_jenis='Umum' ORDER BY tulisan_id DESC limit $offset,$limit");
 		return $hsl;
 	}
 
@@ -60,6 +70,11 @@ class M_tulisan extends CI_Model{
 
 	function berita(){
 		$hsl=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_tulisan ORDER BY tulisan_id DESC");
+		return $hsl;
+	}
+
+	function berita_umum(){
+		$hsl=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_tulisan WHERE nama_jenis='Umum' ORDER BY tulisan_id DESC");
 		return $hsl;
 	}
 

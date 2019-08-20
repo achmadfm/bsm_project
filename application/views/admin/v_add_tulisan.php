@@ -117,7 +117,7 @@
 
                                 <div class="panel-body">
                                         <div class="form-body">
-                                            <form action="<?php echo base_url('admin/tulisan/simpan_tulisan')?>" method="post" enctype="multipart/form-data">
+                                            <form action="<?php echo base_url('admin/tulisan/simpan_tulisan')?>" method="post" enctype="multipart/form-data" id="form1">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
@@ -147,10 +147,9 @@
                                                           <?php endforeach;?>
                                                         </select>
                                                     </div>
-
                                                     <div class="form-group">
                                                         <label class="control-label">Jenis Berita</label>
-                                                        <select class="form-control" name="xjenis" data-placeholder="Choose a Type" tabindex="1">
+                                                        <select class="form-control" name="xjenis" id="jenis" data-placeholder="Choose a Type" tabindex="1" onchange="aktifkan()">
                                                             <option value="Category 1">-Pilih-</option>
                                                             <?php
                                                               $no=0;
@@ -163,7 +162,8 @@
                                                           <?php endforeach;?>
                                                         </select>
                                                     </div>
-
+                                                    <div class='form-group' id="tampil"></div>
+                                                    
                                                       <div class="form-group">
                                                           <label class="control-label">Photo upload</label>
                                                           <input type="file" name="filefoto">
@@ -212,10 +212,20 @@
 
     <script src="<?php echo base_url()?>plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
     <script>
-    CKEDITOR.replace('editor1' ,{
-      filebrowserImageBrowseUrl : '<?php echo base_url('plugins/kcfinder'); ?>'
-    });
-  </script>
+        CKEDITOR.replace('editor1' ,{
+        filebrowserImageBrowseUrl : '<?php echo base_url('plugins/kcfinder'); ?>'
+        });
+    </script>
+    <script>
+        function aktifkan(){
+            var jenis_berita = document.getElementById("form1").jenis.value;
+            if(jenis_berita=="4"){
+                document.getElementById("tampil").innerHTML="<label class='control-label'>Penulis</label><input type='text' name='xpenulis' class='form-control' placeholder='Penulis' required>";
+            }else{
+                document.getElementById("tampil").innerHTML="<input type='hidden' name='xpenulis' class='form-control' placeholder='Penulis' required>";
+            }
+        }
+    </script>
 </body>
 
 </html>

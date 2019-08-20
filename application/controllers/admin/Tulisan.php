@@ -76,7 +76,8 @@ class Tulisan extends CI_Controller{
 					$p=$user->row_array();
 					$user_id=$p['pengguna_id'];
 					$user_nama=$p['pengguna_nama'];
-					$this->m_tulisan->simpan_tulisan($judul,$isi,$kategori_id,$kategori_nama,$id_jenis,$nama_jenis,$user_id,$user_nama,$gambar,$imgslider,seo_title($judul));
+					$penulis=$this->input->post('xpenulis');
+					$this->m_tulisan->simpan_tulisan($judul,$isi,$kategori_id,$kategori_nama,$id_jenis,$nama_jenis,$user_id,$user_nama,$penulis,$gambar,$imgslider,seo_title($judul));
 					echo $this->session->set_flashdata('msg','success');
 					redirect('admin/tulisan');
 				}else{
@@ -112,12 +113,13 @@ class Tulisan extends CI_Controller{
 				$gambar=$gbr['file_name'];
 				$tulisan_id=$this->input->post('kode');
 				$images=$this->input->post('gambar');
-				$path='./template/album/'.$images;
+				$path='./template/cover/'.$images;
 				unlink($path);
 				$judul=strip_tags($this->input->post('xjudul'));
 				$isi=$this->input->post('xisi');
 				$imgslider=$this->input->post('ximgslider');
 				$kategori_id=strip_tags($this->input->post('xkategori'));
+				$penulis=$this->input->post('xpenulis');
 				$data=$this->m_kategori->get_kategori_byid($kategori_id);
 				$q=$data->row_array();
 				$kategori_nama=$q['kategori_nama'];
@@ -130,7 +132,7 @@ class Tulisan extends CI_Controller{
 				$p=$user->row_array();
 				$user_id=$p['pengguna_id'];
 				$user_nama=$p['pengguna_nama'];
-				$this->m_tulisan->update_tulisan($tulisan_id,$judul,$isi,$kategori_id,$kategori_nama,$id_jenis,$nama,$user_id,$user_nama,$gambar,$imgslider,seo_title($judul));
+				$this->m_tulisan->update_tulisan($tulisan_id,$judul,$isi,$kategori_id,$kategori_nama,$id_jenis,$nama,$user_id,$user_nama,$penulis,$gambar,$imgslider,seo_title($judul));
 				echo $this->session->set_flashdata('msg','info');
 				redirect('admin/tulisan');
 
@@ -145,6 +147,7 @@ class Tulisan extends CI_Controller{
 				$isi=$this->input->post('xisi');
 				$imgslider=$this->input->post('ximgslider');
 				$kategori_id=strip_tags($this->input->post('xkategori'));
+				$penulis=$this->input->post('xpenulis');
 				$data=$this->m_kategori->get_kategori_byid($kategori_id);
 				$q=$data->row_array();
 				$kategori_nama=$q['kategori_nama'];
@@ -157,7 +160,7 @@ class Tulisan extends CI_Controller{
 				$p=$user->row_array();
 				$user_id=$p['pengguna_id'];
 				$user_nama=$p['pengguna_nama'];
-				$this->m_tulisan->update_tulisan_tanpa_img($tulisan_id,$judul,$isi,$kategori_id,$kategori_nama,$id_jenis,$nama,$user_id,$user_nama,$imgslider,seo_title($judul));
+				$this->m_tulisan->update_tulisan_tanpa_img($tulisan_id,$judul,$isi,$kategori_id,$kategori_nama,$id_jenis,$nama,$user_id,$user_nama,$penulis,$imgslider,seo_title($judul));
 				echo $this->session->set_flashdata('msg','info');
 				redirect('admin/tulisan');
       }

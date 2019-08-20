@@ -154,6 +154,7 @@
                                             <label class="col-md-12">Full Name</label>
                                             <div class="col-md-12">
                                                 <input type="hidden" name="kode" value="<?php echo $pengguna['pengguna_id'];?>">
+                                                <input type="hidden" name="gambar" value="<?php echo $pengguna['pengguna_photo'];?>">
                                                 <input type="text" name="xnama" placeholder="Johnathan Doe" value="<?php echo $pengguna['pengguna_nama'];?>" class="form-control form-control-line"></div>
                                         </div>
                                         <div class="form-group">

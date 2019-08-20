@@ -127,6 +127,7 @@
                                         <th>Gambar</th>
                                         <th>Judul</th>
                                         <th>Tanggal</th>
+                                        <th>Admin</th>
                                         <th>Penulis</th>
                                         <th>Baca</th>
                                         <th>Kategori</th>
@@ -148,6 +149,7 @@
                                         $tulisan_views=$i['tulisan_views'];
                                          $kategori_id=$i['tulisan_kategori_id'];
                                          $kategori_nama=$i['tulisan_kategori_nama'];
+                                         $penulis = $i['tulisan_penulis'];
                                          $id_jenis=$i['id_jenis'];
                                          $nama_jenis=$i['nama_jenis'];
                                       ?>
@@ -156,6 +158,7 @@
                                           <td><?php echo $tulisan_judul;?></td>
                                           <td><?php echo $tulisan_tanggal;?></td>
                                           <td><?php echo $tulisan_author;?></td>
+                                          <td><?php echo $penulis;?></td>
                                           <td><?php echo $tulisan_views;?></td>
                                           <td><?php echo $kategori_nama;?></td>
                                           <td><?php echo $nama_jenis;?></td>

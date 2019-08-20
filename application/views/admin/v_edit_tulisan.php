@@ -119,7 +119,7 @@
                                       $b=$data->row_array();
                                   ?>
                                         <div class="form-body">
-                                          <?php echo form_open_multipart('admin/tulisan/update_tulisan');?>
+                                        <form action="<?php echo base_url('admin/tulisan/update_tulisan')?>" method="post" enctype="multipart/form-data" id="form1">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
@@ -141,20 +141,20 @@
                                                         <select class="form-control" name="xkategori" required>
                                                             <option value="">-Pilih-</option>
                                                             <?php
-                                                  					foreach ($kat->result_array() as $i) {
-                                                               $kategori_id=$i['kategori_id'];
-                                                               $kategori_nama=$i['kategori_nama'];
-                                                               if($b['tulisan_kategori_id']==$kategori_id)
-                                                                  echo "<option value='$kategori_id' selected>$kategori_nama</option>";
-                                                               else
-                                                                  echo "<option value='$kategori_id'>$kategori_nama</option>";
+                                                  				foreach ($kat->result_array() as $i) {
+                                                                $kategori_id=$i['kategori_id'];
+                                                                $kategori_nama=$i['kategori_nama'];
+                                                                if($b['tulisan_kategori_id']==$kategori_id)
+                                                                    echo "<option value='$kategori_id' selected>$kategori_nama</option>";
+                                                                else
+                                                                    echo "<option value='$kategori_id'>$kategori_nama</option>";
                                                             }?>
                                                         </select>
                                                     </div>
 
                                                     <div class="form-group">
                                                         <label class="control-label">Jenis Berita</label>
-                                                        <select class="form-control" name="xjenis" required>
+                                                        <select class="form-control" name="xjenis" id="jenis" onclick="tampilkan()" required>
                                                             <option value="">-Pilih-</option>
                                                             <?php
                                                   					foreach ($jen->result_array() as $i) {
@@ -167,6 +167,8 @@
                                                             }?>
                                                         </select>
                                                     </div>
+
+                                                    <div class="form-group" id="tampil"></div>
 
                                                     <div class="form-group">
                                                         <label class="control-label">Photo upload</label>
@@ -192,7 +194,7 @@
 
                                                 </div>
                                             </div>
-                                            <?php echo form_close();?>
+                                           </form>
                                         </div>
                                 </div>
                             </div>
@@ -223,10 +225,20 @@
     <script src="<?php echo base_url()?>plugins/ckeditor/ckeditor.js"></script>
     <script src="<?php echo base_url()?>plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
     <script>
-    CKEDITOR.replace('editor1' ,{
-      filebrowserImageBrowseUrl : '<?php echo base_url('plugins/kcfinder'); ?>'
-    });
-  </script>
+        CKEDITOR.replace('editor1' ,{
+        filebrowserImageBrowseUrl : '<?php echo base_url('plugins/kcfinder'); ?>'
+        });
+    </script>
+    <script>
+        function tampilkan(){
+            var jenis_berita = document.getElementById("form1").jenis.value;
+            if(jenis_berita=="4"){
+                document.getElementById("tampil").innerHTML="<label class='control-label'>Penulis</label><input type='text' value='<?php echo $b['tulisan_penulis'];?>' name='xpenulis' class='form-control' placeholder='Penulis' required>";
+            }else{
+                document.getElementById("tampil").innerHTML="<input type='hidden' name='xpenulis'>";
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title>Prestasi | Bosowa School Makassar</title>
+		<title>Berita Umum / Media Cetak | Bosowa School Makassar</title>
 
 		<meta name="keywords" content="Menyajikan Informasi Seputar Sekolah, Asrama dan Pendaftaran Siswa Baru" />
 		<meta name="description" content="Selamat Datang di Website Bosowa School Makassar, adalah Website Profil yang memberikan layanan informasi seputar kegiatan Sekolah, Asrama dan Pendaftaran Siswa Baru" />
@@ -12,6 +12,8 @@
 		<meta http-equiv="Content-Language" content="id-ID">
     	<meta NAME="Distribution" CONTENT="Global">
     	<meta NAME="Rating" CONTENT="General">
+
+
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="<?php echo base_url()?>materialize/favicon.ico" type="image/x-icon" />
 		<link rel="apple-touch-icon" href="<?php echo base_url()?>template/img/apple-touch-icon.png">
@@ -45,10 +47,15 @@
 
 		<!-- Head Libs -->
 		<script src="<?php echo base_url()?>template/vendor/modernizr/modernizr.min.js"></script>
-
+		<?php
+            function limit_words($string, $word_limit){
+                $words = explode(" ",$string);
+                return implode(" ",array_splice($words,0,$word_limit));
+            }
+    ?>
 	</head>
 	<body class="loading-overlay-showing" data-loading-overlay>
-			<!-- Load Facebook SDK for JavaScript -->
+	<!-- Load Facebook SDK for JavaScript -->
 			<div id="fb-root"></div>
 				<script>
 					window.fbAsyncInit = function() {
@@ -103,7 +110,7 @@
 								<div class="header-row">
 									<?php $this->load->view('depan/search')?>
 								</div>
-								<div class="header-row">
+                <div class="header-row">
 									<div class="header-nav">
 										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
 											<i class="fa fa-bars"></i>
@@ -130,69 +137,160 @@
 							<div class="col-md-12">
 								<ul class="breadcrumb">
 									<li><a href="#">Home</a></li>
-									<li class="active">Prestasi</li>
+									<li class="active">Berita Umum</li>
 								</ul>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<h1>Prestasi Kami</h1>
+								<h1>Berita Umum / Media Cetak</h1>
 							</div>
 						</div>
 					</div>
 				</section>
 
 				<div class="container">
-					<?php
-						$k = $kategori->num_rows();
-						$p = $prestasi->num_rows();
-						if(empty($k) || empty($p)):
-					?>
-					<center>
-						<table>
-							<tr>
-								<td><h2>Data Prestasi Belum Ada</h2></td>
-							</tr>
-						</table>
-					</center>
-				<?php else: ?>
-				<div class="col-lg-9">
-					<h4>Achievement Lists</h4>
-							<div class="toggle toggle-primary toggle-lg" data-plugin-toggle>
-							<?php
-									foreach($prestasi->result_array() as $i) :
-										$id_prestasi = $i['id_prestasi'];
-										$nama_prestasi = $i['nama_prestasi'];
-										$deskripsi = $i['deskripsi'];
-										$id_kat_prestasi = $i['id_kategori_prestasi'];
-										$nama_kategori = $i['nama_kategori'];
-										$id_kelas = $i['id_kelas'];
-										$kelas = $i['kelas'];
-										$id_siswa = $i['id_siswa'];
-										$nama_siswa = $i['nama_siswa'];
-										$fotosiswa = $i['foto_siswa'];
-										$sampul = $i['sampul'];
-										$slug = $i['slug'];
-								?>
-								<section class="toggle">
-									<label><?php echo $nama_prestasi;?></label>
-									<div class="toggle-content">
-										<?php echo $deskripsi;?>
-									</div>
-								</section>
-							<?php endforeach;?>
+
+					<div class="row">
+						<div class="col-md-9">
+							<div class="blog-posts">
+                            <?php
+                                $berita = $data->num_rows();
+                                if(empty($berita)):
+                            ?>
+                            <center>
+                                <table>
+                                    <tr>
+                                        <td><h2>Berita Umum Belum Ada</h2></td>
+                                    </tr>
+                                </table>
+                            </center>
+                                <?php else:?>
+								<article class="post post-medium">
+								<?php echo $this->session->flashdata('msg');?>
+									<?php foreach ($data->result() as $row) :?>
+									<div class="row">
+										<div class="col-md-5">
+											<div class="post-image">
+												<div class="owl-carousel owl-theme" data-plugin-options="{'items':1}">
+													<div>
+														<div class="img-thumbnail">
+															<img class="img-responsive" src="<?php echo base_url().'template/cover/'.$row->tulisan_gambar;?>" alt="" style="width:300px; height:170px;">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-7">
+
+											<div class="post-content">
+
+												<h1><a href="<?php echo site_url().'page/'.$row->tulisan_slug;?>"><?php echo $row->tulisan_judul;?></a></h1>
+												<div class="post-meta">
+													<span><i class="fa fa-calendar"></i> Tanggal : <?php echo Umum::format_tanggal($row->tanggal);?> </span>
+													<span><i class="fa fa-user"></i> Editor : <?php echo $row->tulisan_author;?> </span>
+                                                    <span><i class="fa fa-pencil"></i> Penulis : <?php echo $row->tulisan_penulis;?> </span>
+													<span><i class="fa fa-tags"></i> <?php echo $row->tulisan_kategori_nama;?></span><br>
+													<span><i class="fa fa-eye"></i> dibaca : <strong><?php echo $row->tulisan_views;?></strong> kali</span>
+												</div>
+												<?php echo limit_words($row->tulisan_isi,30);?>
+												<a href="<?php echo site_url().'page/'.$row->tulisan_slug;?>" class="btn btn-xs btn-primary pull-right">Selengkapnya</a>
+											</div>
+										</div>
+								</div>
+								<?php endforeach;?>
+								</article>
+                                <?php endif;?>
+								<?php  error_reporting(0); echo $page;?>
 							</div>
 						</div>
-						<div class="col-lg-3">
-							<h4 class="heading-primary">Link-link Terkait</h4>
-							<ul class="nav nav-list flex-column">
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>">Home</a></li>
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('berita')?>">Berita Sekolah</a></li>
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('insight_reading')?>">Insight Reading</a></li>
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url('kontak')?>">Hubungi Kami</a></li>
-							</ul>
+
+						<div class="col-md-3">
+							<aside class="sidebar">
+								<form action="<?php echo base_url('berita/search');?>" method="get">
+									<div class="input-group input-group-lg">
+										<input class="form-control" placeholder="Search..." name="textcari" id="s" type="text">
+										<span class="input-group-btn">
+											<button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-search"></i></button>
+										</span>
+									</div>
+								</form>
+
+								<hr>
+
+								<h4 class="heading-primary">Kategori Berita</h4>
+								<ul class="nav nav-list flex-column mb-5">
+									<?php foreach($category->result() as $row ) : ?>
+										<li class="nav-item"><a class="nav-link" href="<?php echo site_url('berita/kategori/'.str_replace(" ","-",$row->kategori_nama));?>"><?php echo $row->kategori_nama;?></a></li>
+									<?php endforeach;?>
+								</ul>
+
+								<hr>
+
+								<div class="tabs mb-xlg">
+									<ul class="nav nav-tabs">
+										<li class="active"><a href="#popularPosts" data-toggle="tab"><i class="fa fa-star"></i> Populer</a></li>
+										<li><a href="#recentPosts" data-toggle="tab">Terbaru</a></li>
+									</ul>
+									<div class="tab-content">
+										<div class="tab-pane active" id="popularPosts">
+											<ul class="simple-post-list">
+												<?php foreach($populer->result() as $row) :
+													?>
+
+												<li>
+													<div class="post-image">
+														<div class="img-thumbnail">
+																<img src="<?php echo base_url().'template/cover/'.$row->tulisan_gambar;?>" height="50px" width="50px">
+															</a>
+														</div>
+													</div>
+													<div class="post-info">
+														<a href="<?php echo site_url().'page/'.$row->tulisan_slug;?>"><?php echo $row->tulisan_judul;?></a>
+														<div class="post-meta">
+															<?php echo Umum::format_tanggal($row->tanggal);?>
+														</div>
+													</div>
+												</li>
+											<?php endforeach;?>
+											</ul>
+										</div>
+										<div class="tab-pane" id="recentPosts">
+											<ul class="simple-post-list">
+												<?php
+                                                    foreach($recent->result() as $row):
+                                                ?>
+												<li>
+													<div class="post-image">
+														<div class="img-thumbnail">
+															<a href="<?php echo base_url().'page/'.$row->tulisan_slug;?>">
+																<img src="<?php echo base_url().'template/cover/'.$row->tulisan_gambar;?>" height="50px" width="50px">
+															</a>
+														</div>
+													</div>
+													<div class="post-info">
+														<a href="<?php echo base_url().'page/'.$row->tulisan_slug;?>"><?php echo $row->tulisan_judul?></a>
+														<div class="post-meta">
+															 <?php echo Umum::format_tanggal($row->tanggal);?>
+														</div>
+													</div>
+												</li>
+											<?php endforeach;?>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<hr>
+
+								<h4 class="heading-primary">Tentang</h4>
+								<?php $p = $tentang->row_array();?>
+								<p><?php echo $p['isi'];?></p>
+
+							</aside>
 						</div>
-				<?php endif;?>
+					</div>
+
 				</div>
 
 			</div>
@@ -224,6 +322,17 @@
 
 		<!-- Theme Initialization Files -->
 		<script src="<?php echo base_url()?>template/js/theme.init.js"></script>
-            
+
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-12345678-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		 -->
 	</body>
 </html>
