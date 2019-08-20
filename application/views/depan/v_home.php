@@ -264,8 +264,8 @@
 											<center><a href="<?php echo base_url().'pengumuman'?>"><img width="100" height="100" src="<?php echo base_url().'template/toas.png'?>"  alt=" " /></a></center>
 											<br>
 											<h6><strong><?php echo $judul;?></strong></h6>
-											<i class="fa fa-calendar-o"><strong><em> Posted : <?php echo Home::format_tanggal($tanggal);?></em></strong></i><br>
-											<i class="fa fa-user-circle"> (Editor : <?php echo $author;?>)</i><br>
+											<i class="fa fa-calendar-o"></i><strong><em> Posted : <?php echo Home::format_tanggal($tanggal);?></em></strong><br>
+											<i class="fa fa-user-circle"></i> (Editor : <?php echo $author;?>)<br>
 											<?php echo limit_words($deskripsi,15).'...';?>
 										</li>
 										<hr>
