@@ -52,7 +52,7 @@
       </a>
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="<?php echo base_url('berita')?>">Berita</a></li>
-        <li><a class="dropdown-item" href="<?php echo base_url('umum')?>">Berita Umum / Media Cetak</a></li>
+        <li><a class="dropdown-item" href="<?php echo base_url('umum')?>">Berita Umum / Media Massa</a></li>
         <li><a class="dropdown-item" href="<?php echo base_url('pengumuman')?>">Pengumuman | Acara</a></li>
         <li><a class="dropdown-item" href="<?php echo base_url('insight_reading')?>">Insight reading</a></li>
         <li><a class="dropdown-item" href="<?php echo base_url('newsletter')?>">NewsLetter</a></li>
