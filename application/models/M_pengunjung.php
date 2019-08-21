@@ -30,6 +30,7 @@ class M_pengunjung extends CI_Model{
 		}
 
 		function visitor_online(){
+            date_default_timezone_get('Asia/Makassar');
 			$bataswaktu = time() - 300;
 			$query = $this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_online > '$bataswaktu'");
 			return $query;
@@ -93,7 +94,7 @@ class M_pengunjung extends CI_Model{
         }
                 date_default_timezone_set("Asia/Makassar");
 				$tanggal = date("Y-m-d");
-				$waktu = time("H:m:s");
+				$waktu = time();
                 $cek=$this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_ip='$user_ip' AND pengunjung_tanggal='$tanggal'");
 				$row = $cek->row_array();
                 if($cek->num_rows() == 0){
