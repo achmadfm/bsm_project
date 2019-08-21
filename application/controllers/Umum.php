@@ -161,7 +161,7 @@ class Umum extends CI_Controller{
   				$x['populer']=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_tulisan ORDER BY tulisan_views DESC LIMIT 5");
 			    $x['recent']=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%Y-%m-%d') AS tanggal FROM tbl_tulisan ORDER BY tulisan_id DESC LIMIT 5");
 					$x['tentang']=$this->m_web_admin->get_tentang();
-          $this->load->view('depan/v_beritaumum_search',$x);
+          $this->load->view('depan/v_berita_search',$x);
 	 		 }else{
 				 echo $this->session->set_flashdata('msg','<div class="alert alert-danger">Tidak dapat menemukan artikel dengan kata kunci <b>'.$keyword.'</b></div>');
 				 redirect('page');
