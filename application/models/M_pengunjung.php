@@ -94,22 +94,19 @@ class M_pengunjung extends CI_Model{
             $agent='Other';
         }
                 date_default_timezone_set("Asia/Makassar");
-				$tanggal = date("Y-m-d");
 				$waktu = time();
-                $cek=$this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_ip='$user_ip' AND pengunjung_tanggal='$tanggal'");
+                $cek=$this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_ip='$user_ip' AND DATE(pengunjung_tanggal)=CURDATE()");
 				$row = $cek->row_array();
                 if($cek->num_rows() == 0){
-                    $datadb = array('pengunjung_ip'=>$user_ip, 'pengunjung_tanggal'=>$tanggal, 'pengunjung_hits'=>'1', 'pengunjung_online'=>$waktu, 'pengunjung_perangkat'=>$agent);
+                    $datadb = array('pengunjung_ip'=>$user_ip, 'pengunjung_hits'=>'1', 'pengunjung_online'=>$waktu, 'pengunjung_perangkat'=>$agent);
                                 $this->db->insert('tbl_pengunjung',$datadb);
                 }else{
 					$hits = $row['pengunjung_hits'] + 1;
 					$datadb = array('pengunjung_ip'=>$user_ip,
-    							'pengunjung_tanggal'=>$tanggal,
     							'pengunjung_hits'=>$hits,
     							'pengunjung_online'=>$waktu,
     							'pengunjung_perangkat'=>$agent);
-					$array = array('pengunjung_ip'=>$user_ip,
-								   'pengunjung_tanggal'=>$tanggal);
+					$array = array('pengunjung_ip'=>$user_ip,);
 					$this->db->where($array);
 					$this->db->update('tbl_pengunjung',$datadb);
 				}
