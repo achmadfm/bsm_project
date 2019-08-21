@@ -1,6 +1,6 @@
 <?php
 class M_pengunjung extends CI_Model{
-
+    
 	function statistik_pengujung(){
         $query = $this->db->query("SELECT DATE_FORMAT(pengunjung_tanggal,'%d') AS tgl,COUNT(pengunjung_ip) AS jumlah FROM tbl_pengunjung WHERE MONTH(pengunjung_tanggal)=MONTH(CURDATE()) GROUP BY DATE(pengunjung_tanggal)");
 
@@ -24,21 +24,20 @@ class M_pengunjung extends CI_Model{
     }
 
 		function get_hits(){
-            date_default_timezone_get('Asia/Makassar');
-			$query = $this->db->query("SELECT SUM(pengunjung_hits) as total FROM tbl_pengunjung WHERE DATE(pengunjung_tanggal)=CURDATE() GROUP BY pengunjung_tanggal");
+            date_default_timezone_set("Asia/Makassar");
+			$query = $this->db->query("SELECT SUM(pengunjung_hits) as total FROM tbl_pengunjung WHERE DATE(pengunjung_tanggal)=DATE(CURDATE()) GROUP BY pengunjung_tanggal");
 			return $query;
 		}
 
 		function visitor_online(){
-            date_default_timezone_get('Asia/Makassar');
+            date_default_timezone_set("Asia/Makassar");
 			$bataswaktu = time() - 300;
-			$query = $this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_online > '$bataswaktu'");
+			$query = $this->db->query("SELECT * FROM tbl_pengunjung WHERE DATE(pengunjung_tanggal)=DATE(CURDATE()) && pengunjung_online > '$bataswaktu'");
 			return $query;
 		}
 
     function get_all_visitors(){
-        date_default_timezone_get('Asia/Makassar');
-        $hsl=$this->db->query("SELECT * FROM tbl_pengunjung WHERE DATE(pengunjung_tanggal)=CURDATE() GROUP BY pengunjung_ip");
+        $hsl=$this->db->query("SELECT * FROM tbl_pengunjung WHERE DATE(pengunjung_tanggal)=DATE(CURDATE()) GROUP BY pengunjung_ip");
         return $hsl;
     }
 
