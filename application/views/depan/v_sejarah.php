@@ -150,7 +150,7 @@
 					<div class="row">
 						<div class="col-lg-12">
 
-							<h2>Sejarah Bosowa School Makassar</h2>
+							<h2>Sejarah <strong>Bosowa School Makassar</strong></h2>
 
 							<div class="sticky-container">
 								<div class="row">
@@ -175,7 +175,7 @@
 				<hr class="tall">
 
         <div class="container">
-          <h2 align="right">Sejarah Sekolah Alam Bosowa</h2>
+          <h2 align="right">Sejarah <strong>Sekolah Alam Bosowa</strong></h2>
 					<div class="row">
 						<?php $sh = $sejarahsab->row_array();?>
 						<div class="col-lg-3">
