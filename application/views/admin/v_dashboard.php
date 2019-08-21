@@ -1,5 +1,8 @@
+<?php
+  error_reporting(0);
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -9,27 +12,15 @@
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url()?>template/favicon.ico">
     <title>Dashboard - Admin Bosowa School Makassar</title>
-    <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url()?>materialize/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Menu CSS -->
     <link href="<?php echo base_url()?>plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
     <link href="<?php echo base_url()?>plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
-    <!-- Vector CSS -->
-    <link href="<?php echo base_url()?>plugins/bower_components/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
-    <!-- animation CSS -->
+    <link href="<?php echo base_url()?>plugins/bower_components/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
     <link href="<?php echo base_url()?>materialize/css/animate.css" rel="stylesheet">
-    <!-- Custom CSS -->
     <link href="<?php echo base_url()?>materialize/css/style.css" rel="stylesheet">
-    <!-- color CSS -->
     <link href="<?php echo base_url()?>materialize/css/colors/megna-dark.css" id="theme" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
 <?php
-
+    date_default_timezone_set("Asia/Makassar");
     if(is_array($visitor)){
       foreach($visitor as $result){
           $bulan[] = $result->tgl; //ambil bulan
@@ -186,7 +177,7 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="white-box">
-                        <h3 class="box-title">Statistik Pengunjung Bulan Ini (<?php date_default_timezone_set("Asia/Makassar"); echo date('F'); ?>)</h3>
+                        <h3 class="box-title">Statistik Pengunjung Bulan Ini (<?php echo date('F'); ?>)</h3>
                         <canvas id="canvas" width="600" height="280"></canvas>
                     </div>
                   </div>
@@ -217,37 +208,23 @@
                     </div>
                 </div>
             </div>
-            <!-- /.container-fluid -->
             <footer class="footer text-center"> 2017 &copy; Ampleadmin brought to you by themedesigner.in </footer>
         </div>
-        <!-- /#page-wrapper -->
     </div>
-    <!-- /#wrapper -->
-    <!-- jQuery -->
     <script src="<?php echo base_url()?>plugins/bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url()?>materialize/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- Menu Plugin JavaScript -->
     <script src="<?php echo base_url()?>plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
-    <!--Counter js -->
     <script src="<?php echo base_url()?>plugins/bower_components/waypoints/lib/jquery.waypoints.js"></script>
     <script src="<?php echo base_url()?>plugins/bower_components/counterup/jquery.counterup.min.js"></script>
     <script src="<?php echo base_url()?>materialize/js/toastr.js"></script>
-    <!--slimscroll JavaScript -->
     <script src="<?php echo base_url()?>materialize/js/jquery.slimscroll.js"></script>
-
-    <!--Wave Effects -->
     <script src="<?php echo base_url()?>materialize/js/waves.js"></script>
-    <!-- Vector map JavaScript -->
     <script src="<?php echo base_url()?>plugins/bower_components/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="<?php echo base_url()?>plugins/bower_components/vectormap/jquery-jvectormap-world-mill-en.js"></script>
     <script src="<?php echo base_url()?>plugins/bower_components/vectormap/jquery-jvectormap-in-mill.js"></script>
     <script src="<?php echo base_url()?>plugins/bower_components/vectormap/jquery-jvectormap-us-aea-en.js"></script>
-    <script src="<?php echo base_url()?>plugins/bower_components/Chart.js/Chart.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
+    <script src="<?php echo base_url()?>plugins/bower_components/chartjs/Chart.min.js"></script>
     <script src="<?php echo base_url()?>materialize/js/custom.min.js"></script>
-    <!--Style Switcher -->
     <script src="<?php echo base_url()?>plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
     <script>
             var lineChartData = {
@@ -291,5 +268,4 @@
 
         </script>
 </body>
-
 </html>
