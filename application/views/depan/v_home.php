@@ -371,7 +371,7 @@
 							<div class="col-sm-6 col-lg-3">
 								<div class="counter counter-warning appear-animation" data-appear-animation="bounceIn" data-appear-animation-delay="600">
 									<i style="color:#ed9c28;" class="fa fa-users"></i>
-									<strong style="color:#ed9c28;" data-to="<?php echo $pengunjung?>">0</strong>
+									<strong style="color:#ed9c28;" data-to="<?php echo $pengunjung;?>">0</strong>
 									<label>Pengunjung Hari ini</label>
 								</div>
 							</div>
