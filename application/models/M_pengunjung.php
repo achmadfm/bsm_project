@@ -95,7 +95,7 @@ class M_pengunjung extends CI_Model{
         }
                 date_default_timezone_set("Asia/Makassar");
 				$tanggal = date("Y-m-d");
-				$waktu = time();
+				$waktu = date("H:i:s");
                 $cek=$this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_ip='$user_ip' AND pengunjung_tanggal='$tanggal'");
 				$row = $cek->row_array();
                 if($cek->num_rows() == 0){
