@@ -25,7 +25,7 @@ class M_pengunjung extends CI_Model{
 
 		function get_hits(){
             date_default_timezone_set("Asia/Makassar");
-			$query = $this->db->query("SELECT SUM(pengunjung_hits) as total FROM tbl_pengunjung WHERE DATE(pengunjung_tanggal)=DATE(CURDATE()) GROUP BY pengunjung_tanggal");
+			$query = $this->db->query("SELECT SUM(pengunjung_hits) as total FROM tbl_pengunjung WHERE DATE(pengunjung_tanggal)=DATE(CURDATE())");
 			return $query;
 		}
 
