@@ -37,7 +37,8 @@ class M_pengunjung extends CI_Model{
 		}
 
     function get_all_visitors(){
-        $hsl=$this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_tanggal='".date_default_timezone_set("Asia/Makassar")."' GROUP BY pengunjung_ip");
+        date_default_timezone_get('Asia/Makassar');
+        $hsl=$this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_tanggal='".date("Y-m-d")."' GROUP BY pengunjung_ip");
         return $hsl;
     }
 
