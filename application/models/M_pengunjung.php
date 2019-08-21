@@ -24,7 +24,8 @@ class M_pengunjung extends CI_Model{
     }
 
 		function get_hits(){
-			$query = $this->db->query("SELECT SUM(pengunjung_hits) as total FROM tbl_pengunjung WHERE pengunjung_tanggal='".date_default_timezone_set("Asia/Makassar")."' GROUP BY pengunjung_tanggal");
+            date_default_timezone_get('Asia/Makassar');
+			$query = $this->db->query("SELECT SUM(pengunjung_hits) as total FROM tbl_pengunjung WHERE pengunjung_tanggal='".date("Y-m-d")."' GROUP BY pengunjung_tanggal");
 			return $query;
 		}
 
@@ -90,9 +91,10 @@ class M_pengunjung extends CI_Model{
         }else{
             $agent='Other';
         }
-				$tanggal = date_default_timezone_set("Asia/Makassar");
+                date_default_timezone_set("Asia/Makassar");
+				$tanggal = date("Y-m-d");
 				$waktu = time();
-        $cek=$this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_ip='$user_ip' AND pengunjung_tanggal='$tanggal'");
+                $cek=$this->db->query("SELECT * FROM tbl_pengunjung WHERE pengunjung_ip='$user_ip' AND pengunjung_tanggal='$tanggal'");
 				$row = $cek->row_array();
         if($cek->num_rows() == 0){
             $datadb = array('pengunjung_ip'=>$user_ip, 'pengunjung_tanggal'=>$tanggal, 'pengunjung_hits'=>'1', 'pengunjung_online'=>$waktu, 'pengunjung_perangkat'=>$agent);
