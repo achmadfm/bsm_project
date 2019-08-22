@@ -11,24 +11,19 @@
 		<meta http-equiv="Content-Language" content="id-ID">
     	<meta NAME="Distribution" CONTENT="Global">
     	<meta NAME="Rating" CONTENT="General">
-    	 
     	<?php 
     	   
     	if ($this->uri->segment(3)=='news'){ 
     	    $rows = $this->m_tulisan->view_where('tbl_tulisan',array('tulisan_slug' => $this->uri->segment(4)))->row_array();
 	    echo '<meta property="og:title" content="'.$title.'" />
 			  <meta property="og:type" content="website" />
-			  <meta property="og:url" content="'.base_url().''.$this->uri->segment(4).'" />
-			  <meta property="og:image" content="'.base_url().'template/cover/'.$rows['tulisan_gambar'].'" /> 
+			  <meta property="og:url" content="'.site_url().''.$this->uri->segment(4).'" />
+			  <meta property="og:image" content="'.site_url().'template/cover/'.$rows['tulisan_gambar'].'" /> 
 			  <meta property="og:description" content="'.$deskripsi.'"/>';
 	    } ?>
 
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="<?php echo base_url()?>materialize/favicon.ico" type="image/x-icon" />
-		<link rel="apple-touch-icon" href="<?php echo base_url()?>img/apple-touch-icon.png">
-
-		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="shortcut icon" href="<?php echo base_url()?>materialize/favicon.ico" type="image/x-icon" />
 		<link href="<?php echo base_url()?>plugins/bower_components/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
 
 		<!-- Web Fonts  -->
