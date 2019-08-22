@@ -295,7 +295,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="call-to-action-content align-left pb-md mb-xl ml-none">
-										<h3 class="text-color-light mb-none">Pendaftaran Siswa Baru Bosowa School Makassar <strong>Telah DiBuka</strong></h3>
+									<h2 class="text-color-light mb-none">Pendaftaran Siswa Baru <br> Bosowa School Makassar dan Sekolah Alam Bosowa <br> <strong>Telah DiBuka</strong> </h2>
 										<br>
 										<a href="http://bit.ly/Register_BSM" target="_blank" class="btn btn-md btn-warning">Daftar? Klik disini!</a>
 									</div>
