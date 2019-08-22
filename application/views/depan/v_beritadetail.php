@@ -5,8 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 		<title><?php echo $title;?> | Bosowa School Makassar</title>
-		<meta name="keywords" content="Menyajikan Informasi Seputar Sekolah, Asrama dan Pendaftaran Siswa Baru" />
-		<meta name="description" content="Selamat Datang di Website Bosowa School Makassar, adalah Website Profil yang memberikan layanan informasi seputar kegiatan Sekolah, Asrama dan Pendaftaran Siswa Baru" />
+		<!-- <meta name="keywords" content="Menyajikan Informasi Seputar Sekolah, Asrama dan Pendaftaran Siswa Baru" />
+		<meta name="description" content="Selamat Datang di Website Bosowa School Makassar, adalah Website Profil yang memberikan layanan informasi seputar kegiatan Sekolah, Asrama dan Pendaftaran Siswa Baru" /> -->
 		<meta name="author" content="One Bosowa School">
 		<meta http-equiv="Content-Language" content="id-ID">
     	<meta NAME="Distribution" CONTENT="Global">
@@ -17,10 +17,10 @@
     	if ($this->uri->segment(3)=='news'){ 
     	    $rows = $this->m_tulisan->view_where('tbl_tulisan',array('tulisan_slug' => $this->uri->segment(4)))->row_array();
 	    echo '<meta property="og:title" content="'.$title.'" />
-			 <meta property="og:type" content="blog" />
-			 <meta property="og:url" content="'.base_url().''.$this->uri->segment(4).'" />
-			 <meta property="og:image" content="'.base_url().'template/cover/'.$rows['tulisan_gambar'].'" /> 
-			 <meta property="og:description" content="'.$deskripsi.'"/>';
+			  <meta property="og:type" content="website" />
+			  <meta property="og:url" content="'.base_url().''.$this->uri->segment(4).'" />
+			  <meta property="og:image" content="'.base_url().'template/cover/'.$rows['tulisan_gambar'].'" /> 
+			  <meta property="og:description" content="'.$deskripsi.'"/>';
 	    } ?>
 
 		<!-- Favicon -->
