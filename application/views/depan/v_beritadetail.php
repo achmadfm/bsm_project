@@ -14,8 +14,8 @@
     	 
     	<?php 
     	   
-    	if ($this->uri->segment(2)=='news'){ 
-    	    $rows = $this->m_tulisan->view_where('tbl_tulisan',array('tulisan_slug' => $this->uri->segment(3)))->row_array();
+    	if ($this->uri->segment(3)=='news'){ 
+    	    $rows = $this->m_tulisan->view_where('tbl_tulisan',array('tulisan_slug' => $this->uri->segment(4)))->row_array();
 	    echo '<meta property="og:title" content="'.$title.'" />
 			 <meta property="og:type" content="blog" />
 			 <meta property="og:url" content="'.base_url().''.$this->uri->segment(3).'" />
