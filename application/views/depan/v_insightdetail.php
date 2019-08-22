@@ -19,11 +19,11 @@
 	        echo  '<meta property="og:title" content="'.$title.'" />';
 	        echo  '<meta property="og:description" content="'.$deskripsi.'"/>';
 	        echo  '<meta property="og:type" content="article" />';
-	        echo  '<meta property="og:url" content="'.site_url().''.$this->uri->segment(4).'" />';
+	        echo  '<meta property="og:url" content="'.base_url().''.$this->uri->segment(4).'" />';
 	         if(empty($rows['foto_penulis'])){
-	             echo '<meta property="og:image" content="'.site_url().'template/images/userblank.png"/> ';
+	             echo '<meta property="og:image" content="'.base_url().'template/images/userblank.png"/>';
 	         }else{
-	             echo '<meta property="og:image" content="'.site_url().'template/users/'.$rows['foto_penulis'].'" /> ';
+	             echo '<meta property="og:image" content="'.base_url().'template/users/'.$rows['foto_penulis'].'" /> ';
 	         }
 			 
 	    } ?>

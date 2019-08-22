@@ -17,8 +17,8 @@
     	    $rows = $this->m_tulisan->view_where('tbl_tulisan',array('tulisan_slug' => $this->uri->segment(4)))->row_array();
 	    echo '<meta property="og:title" content="'.$title.'" />';
 		echo '<meta property="og:type" content="website" />';
-		echo '<meta property="og:url" content="'.site_url().''.$this->uri->segment(4).'" />';
-		echo '<meta property="og:image" content="'.site_url().'template/cover/'.$rows['tulisan_gambar'].'" />'; 
+		echo '<meta property="og:url" content="'.base_url().''.$this->uri->segment(4).'" />';
+		echo '<meta property="og:image" content="'.base_url().'template/cover/'.$rows['tulisan_gambar'].'" />'; 
 		echo '<meta property="og:description" content="'.$deskripsi.'"/>';
 	    } ?>
 
