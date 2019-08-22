@@ -6,7 +6,7 @@
 
 		<title><?php echo $title;?> | Bosowa School Makassar</title>
 		<meta name="keywords" content="Menyajikan Informasi Seputar Sekolah, Asrama dan Pendaftaran Siswa Baru" />
-		<meta name="description" content="Selamat Datang di Website Bosowa School Makassar, adalah Website Profil yang memberikan layanan informasi seputar kegiatan Sekolah, Asrama dan Pendaftaran Siswa Baru" />
+		<!-- <meta name="description" content="Selamat Datang di Website Bosowa School Makassar, adalah Website Profil yang memberikan layanan informasi seputar kegiatan Sekolah, Asrama dan Pendaftaran Siswa Baru" /> -->
 		<meta name="author" content="One Bosowa School">
 		<meta http-equiv="Content-Language" content="id-ID">
     	<meta NAME="Distribution" CONTENT="Global">
@@ -14,16 +14,16 @@
 		
 		<?php 
     	   
-    	if ($this->uri->segment(1)=='article'){ 
-    	    $rows = $this->m_artikel->view_where('tbl_artikel',array('artikel_slug' => $this->uri->segment(2)))->row_array();
+    	if ($this->uri->segment(3)=='article'){ 
+    	    $rows = $this->m_artikel->view_where('tbl_artikel',array('artikel_slug' => $this->uri->segment(4)))->row_array();
 	        echo  '<meta property="og:title" content="'.$title.'" />';
 	        echo  '<meta property="og:description" content="'.$deskripsi.'"/>';
 	        echo  '<meta property="og:type" content="article" />';
-	        echo	'<meta property="og:url" content="'.base_url().''.$this->uri->segment(2).'" />';
+	        echo  '<meta property="og:url" content="'.site_url().''.$this->uri->segment(4).'" />';
 	         if(empty($rows['foto_penulis'])){
-	             echo '<meta property="og:image" content="'.base_url().'template/images/userblank.png"/> ';
+	             echo '<meta property="og:image" content="'.site_url().'template/images/userblank.png"/> ';
 	         }else{
-	             echo '<meta property="og:image" content="'.base_url().'template/users/'.$rows['foto_penulis'].'" /> ';
+	             echo '<meta property="og:image" content="'.site_url().'template/users/'.$rows['foto_penulis'].'" /> ';
 	         }
 			 
 	    } ?>
