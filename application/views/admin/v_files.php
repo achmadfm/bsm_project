@@ -182,7 +182,7 @@
                                       <label for="inputUserName" class="col-sm-4 control-label">File</label>
                                       <div class="col-sm-7">
                                         <input type="file" name="filefoto" required>
-                                        NB: file harus bertype pdf|doc|docx|ppt|pptx|zip. ukuran maksimal 2,7 MB dan minimal 100 KB.
+                                        NB: file harus bertype pdf|doc|docx|ppt|pptx|zip. ukuran maksimal 15MB dan minimal 100KB.
                                       </div>
                                   </div>
 
@@ -233,7 +233,7 @@
                                           <label for="inputUserName" class="col-sm-4 control-label">File</label>
                                           <div class="col-sm-7">
                                             <input type="file" name="filefoto">
-                                            NB: file harus bertype pdf|doc|docx|ppt|pptx|zip. ukuran maksimal 2,7 MB.
+                                            NB: file harus bertype pdf|doc|docx|ppt|pptx|zip. ukuran maksimal 15MB dan minimal 100KB .
                                           </div>
                                       </div>
 
