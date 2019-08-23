@@ -235,7 +235,7 @@
 										<ul class="thumbnail-gallery" data-plugin-lightbox data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}" id="instafeed">
 											
 										</ul>
-										<center><a class="btn btn-primary" href="https://www.instagram.com/bosowaschoolmks/" target="_blank">Click Here for More Photos</a></center>
+										<center><a class="btn btn-primary" href="https://www.instagram.com/sekolahalambosowa/" target="_blank">Click Here for More Photos</a></center>
 									</div>
 								</div>
 							</div>
