@@ -150,7 +150,7 @@
 
 					<div class="row">
 						<div class="col-md-12">
-							<h2 class="mb-none">Galeri Kami</h2>
+							<h2 class="mb-none">Galeri Kami (Instagram)</h2>
 
 							<hr class="tall">
 						</div>
@@ -166,8 +166,6 @@
 									<ul class="image-gallery sort-destination lightbox" data-sort-id="portfolio" data-plugin-options="{'delegate': 'a.lightbox-portfolio', 'type': 'image', 'gallery': {'enabled': true}}">
 										
 									</ul>
-									
-									<h2><center>Our Gallery From Instagram</center></h2>
 									<div class="row">
 										<div id="instafeed">
 										
