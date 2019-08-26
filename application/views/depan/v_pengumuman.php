@@ -260,7 +260,7 @@
 														<span><i class="fa fa-calendar"></i> Posted : <?php echo Pengumuman::format_tanggal($tanggal);?></span><br>
 														<span><i class="fa fa-map-marker"></i> Lokasi : di <?php echo $agenda_tempat;?></span><br>
 														<span><i class="fa fa-calendar-check-o"></i> Tanggal Pelaksanaan : <?php echo Pengumuman::format_tanggal($agenda_mulai);?></span>
-														<span><i class="fa fa-clock-o"></i> Mulai Jam <?php echo $agenda_waktu;?></span>
+														<span><i class="fa fa-clock-o"></i> Mulai <?php echo $agenda_waktu;?></span>
 													</div>
 												</div>
 											</div>
