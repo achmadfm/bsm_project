@@ -14,12 +14,12 @@
 		
 		<?php 
     	   
-    	if ($this->uri->segment(3)=='article'){ 
-    	    $rows = $this->m_artikel->view_where('tbl_artikel',array('artikel_slug' => $this->uri->segment(4)))->row_array();
+    	if ($this->uri->segment(2)=='article'){ 
+    	    $rows = $this->m_artikel->view_where('tbl_artikel',array('artikel_slug' => $this->uri->segment(3)))->row_array();
 	        echo  '<meta property="og:title" content="'.$title.'" />';
 	        echo  '<meta property="og:description" content="'.$deskripsi.'"/>';
 	        echo  '<meta property="og:type" content="article" />';
-	        echo  '<meta property="og:url" content="'.base_url().''.$this->uri->segment(4).'" />';
+	        echo  '<meta property="og:url" content="'.base_url().''.$this->uri->segment(3).'" />';
 	         if(empty($rows['foto_penulis'])){
 	             echo '<meta property="og:image" content="'.base_url().'template/images/userblank.png"/>';
 	         }else{
@@ -115,16 +115,7 @@
 					<div class="header-container container">
 						<div class="header-row">
 							<div class="header-column">
-								<div class="header-logo">
-									<a href="<?php echo base_url()?>">
-										<img alt="Porto" width="75" height="75" data-sticky-width="100" data-sticky-height="50" data-sticky-top="55" src="<?php echo base_url()?>materialize/sekolah.png">
-									</a>
-								</div>
-								<div class="header-logo">
-									<a href="<?php echo base_url()?>">
-										<img alt="Porto" width="75" height="75" data-sticky-width="100" data-sticky-height="50" data-sticky-top="55" src="<?php echo base_url()?>materialize/SAB.png">
-									</a>
-								</div>
+								<?php $this->load->view('depan/logo')?>
 							</div>
 							<div class="header-column">
 								<div class="header-row">
