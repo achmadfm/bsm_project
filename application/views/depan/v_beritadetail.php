@@ -107,16 +107,14 @@
 					<div class="header-container container">
 						<div class="header-row">
 							<div class="header-column">
-								<div class="header-logo">
-									<a href="<?php echo base_url()?>">
-										<img alt="Porto" width="75" height="75" data-sticky-width="100" data-sticky-height="50" data-sticky-top="55" src="<?php echo base_url()?>materialize/sekolah.png">
-									</a>
-								</div>
-								<div class="header-logo">
-									<a href="<?php echo base_url()?>">
-										<img alt="Porto" width="75" height="75" data-sticky-width="100" data-sticky-height="50" data-sticky-top="55" src="<?php echo base_url()?>materialize/SAB.png">
-									</a>
-								</div>
+								<a href="<?php echo base_url()?>">
+									<div class="header-logo">
+											<img alt="Porto" width="75" height="75" data-sticky-width="100" data-sticky-height="50" data-sticky-top="55" src="<?php echo base_url()?>materialize/sekolah.png">
+									</div>
+									<div class="header-logo">
+											<img alt="Porto" width="75" height="75" data-sticky-width="100" data-sticky-height="50" data-sticky-top="55" src="<?php echo base_url()?>materialize/SAB.png">
+									</div>
+								</a>
 							</div>
 							<div class="header-column">
 								<div class="header-row">
