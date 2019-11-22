@@ -187,6 +187,12 @@
 				
 				<hr>
 
+				<div>
+					<img src="<?php echo base_url()?>template/unit.jpg" width="1360px" alt="" />
+				</div>
+
+				<hr>
+
 				<div class="container">
 					<div class="row">
 						<div class="col">

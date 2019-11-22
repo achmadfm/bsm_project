@@ -169,6 +169,12 @@
 
 				<hr class="tall">
 
+				<div>
+					<img src="<?php echo base_url()?>template/home.jpg" width="1366px" alt="" />
+				</div>
+				
+				<hr class="tall">
+
 				<div class="container">
                     <center>
                         <div class="featured-boxes featured-boxes-style-3">
