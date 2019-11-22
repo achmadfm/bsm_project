@@ -136,12 +136,12 @@
                                     <label class="col-md-12">Judul (Baru)</label>
                                     <div class="col-md-12">
                                         <input type="hidden" name="id" value="<?php echo $p['id_tentang'];?>">
-                                        <input type="text" name="judul" class="form-control"> </div>
+                                        <input type="text" name="judul" class="form-control" vale="<?php echo $p['judul'];?>"></div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-12">Isi Tentang Sekolah (Baru)</label>
                                     <div class="col-md-12">
-                                        <textarea id="mymce" name="isi" rows="5"></textarea>
+                                        <textarea id="mymce" name="isi" rows="5"><?php echo $p['isi'];?></textarea>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Update</button>
@@ -166,7 +166,7 @@
                                 <div class="form-group">
                                     <label class="col-md-12">Isi Sejarah Sekolah (Baru)</label>
                                     <div class="col-md-12">
-                                        <textarea id="mymce" name="isis" rows="5"></textarea>
+                                        <textarea id="mymce" name="isis" rows="5"><?php echo $sh['isi_sejarah'];?></textarea>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Update</button>
@@ -191,7 +191,7 @@
                                 <div class="form-group">
                                     <label class="col-md-12">Isi Sejarah Sekolah (Baru)</label>
                                     <div class="col-md-12">
-                                        <textarea id="mymce" name="isisab" rows="5"></textarea>
+                                        <textarea id="mymce" name="isisab" rows="5"><?php echo $sh['isi_sejarah'];?></textarea>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Update</button>
