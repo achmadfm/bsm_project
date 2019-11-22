@@ -136,7 +136,7 @@
                                     <label class="col-md-12">Judul (Baru)</label>
                                     <div class="col-md-12">
                                         <input type="hidden" name="id" value="<?php echo $p['id_tentang'];?>">
-                                        <input type="text" name="judul" class="form-control" vale="<?php echo $p['judul'];?>"></div>
+                                        <input type="text" name="judul" class="form-control" value="<?php echo $p['judul'];?>"></div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-12">Isi Tentang Sekolah (Baru)</label>
