@@ -169,12 +169,6 @@
 
 				<hr class="tall">
 
-				<div>
-					<img src="<?php echo base_url()?>template/home.jpg" width="1366px" alt="" />
-				</div>
-				
-				<hr class="tall">
-
 				<div class="container">
                     <center>
                         <div class="featured-boxes featured-boxes-style-3">
@@ -196,6 +190,12 @@
 				</div>
 
                 <hr class="tall">
+
+				<div class="center">
+					<img src="<?php echo base_url()?>template/home.jpg" width="1366px" alt="" />
+				</div>
+				
+				<hr class="tall">
                 
 				<section class="parallax section section-text-light section-parallax" data-plugin-parallax data-plugin-options="{'speed': 1}" data-image-src="<?php echo base_url()?>template/daftar.jpg">
 					<section class="call-to-action">

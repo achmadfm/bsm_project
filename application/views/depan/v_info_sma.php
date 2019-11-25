@@ -186,7 +186,7 @@
 				</div>
 				
 				<hr>
-					<div>
+					<div class="center">
 						<img src="<?php echo base_url()?>template/unit.jpg" width="1360px" alt="" />
 					</div>
 				<hr>
