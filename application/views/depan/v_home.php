@@ -316,15 +316,25 @@
 						<div class="col-lg-4">
 							<div class="featured-box featured-box-primary">
 								<div class="box-content">
-									<h4 class="text-uppercase">Galeri Instagram</h4>
+									<h4 class="text-uppercase">Galeri Instagram BSM</h4>
 									<ul class="thumbnail-gallery">
 										<div id="instafeedhome">
 										</div>
 									</ul>
 								</div>
 							</div>
+							<div class="featured-box featured-box-primary">
+								<div class="box-content">
+									<h4 class="text-uppercase">Galeri Instagram SAB</h4>
+									<ul class="thumbnail-gallery">
+										<div id="instafeedsabhome">
+										</div>
+									</ul>
+								</div>
+							</div>
 						</div>
-						
+
+
 					  </div>
 					</div>
 					</div>
@@ -418,5 +428,6 @@
 		<script src="<?php echo base_url()?>template/js/theme.init.js"></script>
 		<script src="<?php echo base_url()?>template/js/instagram/instafeed.min.js"></script>
 		<script src="<?php echo base_url()?>template/js/instagram/home.js"></script>
+		<script src="<?php echo base_url()?>template/js/instagram/sabhome.js"></script>
 	</body>
 </html>
