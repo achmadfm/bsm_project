@@ -22,7 +22,7 @@
 			<div class="col-lg-3">
 				<h5 class="mb-2">Call Us / Contact Persons</h5>
 				<span class="phone">(0411) 855-211</span>
-				<p class="mb-0">Farannisa : +62812-4243-9953 <br>Fachru Sawati : +62813-9888-8018 </p>
+				<p class="mb-0">Farannisa : 089646892938 <br>Fachru Sawati : 0813-9888-8018 <br>Faizah : 085230838575</p>
 				<ul class="list list-icons list-icons-sm">
 					<li><i class="fa fa-envelope"></i> <a href="#">info@bosowaschool.sch.id</a></li>
 				</ul>
