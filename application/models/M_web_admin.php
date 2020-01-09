@@ -1,6 +1,31 @@
 <?php
   class M_web_admin extends CI_Model{
 
+    function get_penjelasan_by_id($id){
+      $query = $this->db->query("SELECT * FROM tbl_penjelasan_unit WHERE id_unit='$id'");
+      return $query;
+    }
+
+    function up_visimisi($id,$visi){
+      return $this->db->query("UPDATE tbl_penjelasan_unit SET visi_misi='$visi' WHERE id_unit='$id'");
+    }
+
+    function up_kur($id,$kur){
+      return $this->db->query("UPDATE tbl_penjelasan_unit SET kurikulum='$kur' WHERE id_unit='$id'");
+    }
+
+    function up_unggul($id,$unggul){
+      return $this->db->query("UPDATE tbl_penjelasan_unit SET keunggulan='$unggul' WHERE id_unit='$id'");
+    }
+
+    function up_ekskul($id,$eks){
+      return $this->db->query("UPDATE tbl_penjelasan_unit SET ekskul='$eks' WHERE id_unit='$id'");
+    }
+
+    function up_profil($id,$profil){
+      return $this->db->query("UPDATE tbl_penjelasan_unit SET profil='$profil' WHERE id_unit='$id'");
+    }
+
     function get_unit(){
       $query = $this->db->query("SELECT * FROM tbl_unit");
       return $query;

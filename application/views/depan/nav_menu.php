@@ -32,15 +32,15 @@
         <li class="dropdown-submenu">
           <a class="dropdown-item" href="#">Bosowa School Makassar</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<?php echo base_url('Bsm/info_sma')?>">Sekolah Menengah Atas</a></li>
-            <li><a class="dropdown-item" href="<?php echo base_url('Bsm/info_smp')?>">Sekolah Menengah Pertama</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url('Bsm/info_sma')?>">SMA</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url('Bsm/info_smp')?>">SMP</a></li>
           </ul>
         </li>
         <li class="dropdown-submenu">
           <a class="dropdown-item" href="#">Sekolah Alam Bosowa</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<?php echo base_url('Sab/info_sd')?>">Sekolah Dasar</a></li>
-            <li><a class="dropdown-item" href="<?php echo base_url('Sab/info_tk')?>">Taman Kanak-Kanak</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url('Sab/info_sd')?>">SD</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url('Sab/info_tk')?>">TK</a></li>
             <li><a class="dropdown-item" href="<?php echo base_url('Sab/info_pg')?>">Play Group</a></li>
           </ul>
         </li>

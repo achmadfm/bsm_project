@@ -18,6 +18,8 @@
     }
 
     function info_sma(){
+      $id = 1;
+      $x['penjelasansma'] = $this->m_web_admin->get_penjelasan_by_id($id);
       $x['home']=$this->m_galeri->get_galeri_home();
       $x['guru'] = $this->m_guru->get_all_guru_sma();
       $x['units'] = $this->m_slider->get_opsi_pendidikan();
@@ -28,6 +30,8 @@
     }
 
     function info_smp(){
+      $id = 2;
+      $x['penjelasansmp'] = $this->m_web_admin->get_penjelasan_by_id($id);
       $x['home']=$this->m_galeri->get_galeri_home();
       $x['guru'] = $this->m_guru->get_all_guru_smp();
       $x['units'] = $this->m_slider->get_opsi_pendidikan();
