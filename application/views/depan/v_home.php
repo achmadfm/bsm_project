@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     
-	<head>
-		<meta charset="utf-8">
+	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 		<title>Home | Bosowa School Makassar</title>
@@ -106,8 +106,8 @@
 							<div class="header-column">
 								<?php $this->load->view('depan/logo')?>
 							</div>
-							<div class="header-column">
-								<div class="header-row">
+							<div class="header-column justify-content-end">
+								<div class="header-row pt-3">
 									<?php $this->load->view('depan/search')?>
 								</div>
 								<div class="header-row">
@@ -192,7 +192,7 @@
                 <hr class="tall">
 
 				<div class="center">
-					<img src="<?php echo base_url()?>template/home.jpg" width="1366px" alt="" />
+					<img class="img-responsive" src="<?php echo base_url()?>template/home.jpg" width="1366px" alt="" />
 				</div>
 				
 				<hr class="tall">

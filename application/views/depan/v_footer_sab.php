@@ -35,6 +35,14 @@
 					<li class="social-icons-instagram"><a href="https://www.instagram.com/bosowaschoolmks/?hl=en" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
 					<li class="social-icons-youtube"><a href="https://www.youtube.com/channel/UCC6J3lYTGN3xSzreVvwBOVg" target="_blank" title="Youtube"><i class="fa fa-youtube"></i></a></li>
 				</ul>
+				<br>
+				<h5>Kunjungi Juga</h5>
+				<ul class="list list-icons list-icons-sm">
+					<li><i class="fa fa-caret-right"></i><a href="https://bosowafoundation.org/" target="_blank"> Bosowa Foundation</a></li>
+            		<li><i class="fa fa-caret-right"></i><a href="https://bogor.bosowaschool.sch.id/" target="_blank"> Bosowa Bina Insani Bogor</a></li>
+            		<li><i class="fa fa-caret-right"></i><a href="https://cilegon.bosowaschool.sch.id/" target="_blank"> Bosowa Al-Azhar Cilegon</a></li>
+            		<li><i class="fa fa-caret-right"></i><a href="https://www.librarybsm.bosowaschool.sch.id/" target="_blank"> Library Bosowa School</a></li>
+				</ul>
 			</div>
 		</div>
 	</div>

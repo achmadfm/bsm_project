@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
+	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 		<title>Informasi PG (Play Group) | Sekolah Alam Bosowa</title>
@@ -188,7 +188,7 @@
 				<hr>
 									
 				<div class="center">
-					<img src="<?php echo base_url()?>template/pg_tk.jpg" width="1360px" alt="" />
+					<img class="img-responsive" src="<?php echo base_url()?>template/pg_tk.jpg" width="1360px" alt="" />
 				</div>
 
 				<hr>

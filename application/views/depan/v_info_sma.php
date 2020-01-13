@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
+	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 		<title>Informasi SMA | Bosowa School Makassar</title>
@@ -187,7 +187,7 @@
 				
 				<hr>
 					<div class="center">
-						<img src="<?php echo base_url()?>template/unit.jpg" width="1360px" alt="" />
+						<img class="img-responsive" src="<?php echo base_url()?>template/unit.jpg" width="1360px" alt="" />
 					</div>
 				<hr>
 
