@@ -8,7 +8,7 @@ $(document).ready(function() {
 		sortBy: 'most-recent',
 		limit:9,
 		resolution: 'thumbnail',
-		template:'<li><a href="{{link}}" target="_new" ><span class="thumbnail mb-0"><img src="{{image}}" width="70" height="70" /></span></a></li>',
+		template:'<li><a href="{{link}}" target="_new"><span class="img-thumbnail d-block"><img class="img-fluid" width="70" height="70" src="{{image}}"></span></a><br><p><i class="fa fa-heart"></i> {{likes}}  <i class="fa fa-comment"></i> {{comments}}</p></li>',
 	});
 	feed.run();
 });
