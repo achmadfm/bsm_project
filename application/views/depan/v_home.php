@@ -312,7 +312,6 @@
 							</div>
 						</div>
 					
-					
 						<div class="col-lg-4">
 							<div class="featured-box featured-box-primary">
 								<div class="box-content">
