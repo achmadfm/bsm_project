@@ -143,6 +143,7 @@
                                           <td><?php echo $tanggal;?></td>
                                           <td><?php echo $download;?></td>
                                           <td style="text-align:right;">
+                                                <a class="btn btn-info btn-circle" data-toggle="modal" data-target="#ModalSampul<?php echo $id;?>"><span class="fa fa-file-image-o"></span></a>
                                                 <a class="btn btn-success btn-circle" data-toggle="modal" data-target="#ModalEdit<?php echo $id;?>"><span class="fa fa-pencil"></span></a>
                                                 <a class="btn btn-danger btn-circle" data-toggle="modal" data-target="#ModalHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
                                           </td>
@@ -233,7 +234,7 @@
                                           <label for="inputUserName" class="col-sm-4 control-label">File</label>
                                           <div class="col-sm-7">
                                             <input type="file" name="filefoto">
-                                            NB: file harus bertype pdf|doc|docx|ppt|pptx|zip. ukuran maksimal 15MB dan minimal 100KB .
+                                            NB: file harus bertype pdf|doc|docx|ppt|pptx|zip. ukuran maksimal 2MB dan minimal 100KB .
                                           </div>
                                       </div>
 
@@ -266,14 +267,50 @@
                             </div>
                             <form class="form-horizontal" action="<?php echo base_url().'admin/files/hapus_file'?>" method="post" enctype="multipart/form-data">
                             <div class="modal-body">
-        							             <input type="hidden" name="kode" value="<?php echo $id;?>"/>
-                                   <input type="hidden" name="file" value="<?php echo $file;?>">
-                                    <p>Apakah Anda yakin mau menghapus file <b><?php echo $judul;?></b> ?</p>
-
+                                <input type="hidden" name="kode" value="<?php echo $id;?>"/>
+                                <input type="hidden" name="file" value="<?php echo $file;?>">
+                                <p>Apakah Anda yakin mau menghapus file <b><?php echo $judul;?></b> ?</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-primary btn-flat" id="simpan">Hapus</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        	<?php endforeach;?>
+
+            <?php foreach ($data->result_array() as $i) :
+                    $id=$i['file_id'];
+                    $sampul=$i['file_sampul'];
+                ?>
+	<!--Modal Hapus Pengguna-->
+                <div class="modal fade" id="ModalSampul<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
+                                <h4 class="modal-title" id="myModalLabel">Tambah Sampul</h4>
+                            </div>
+                            <form class="form-horizontal" action="<?php echo base_url().'admin/files/simpan_sampul'?>" method="post" enctype="multipart/form-data">
+                            <div class="modal-body">
+        						<input type="hidden" name="kode" value="<?php echo $id;?>"/>
+                                <div class="form-group">
+                                    <Label for="inputUserName" class="col-sm-4 control-label">Sampul Saat ini</Label>
+                                    <img src="<?php echo base_url().'template/files/sampul/'.$sampul;?>" style="width:200px; height:300px;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputUserName" class="col-sm-4 control-label">Sampul</label>
+                                    <div class="col-sm-7">
+                                    <input type="file" name="filefoto">
+                                    NB: file harus bertype bmp|gif|jpg|jpeg|png. ukuran maksimal 2MB dan minimal 100KB .
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success btn-flat" id="simpan">Simpan</button>
                             </div>
                             </form>
                         </div>
@@ -367,10 +404,18 @@
         <script type="text/javascript">
                 swal("Hooray!!","Files successful added","success")
         </script>
+    <?php elseif($this->session->flashdata('msg')=='successsampul'):?>
+        <script type="text/javascript">
+                swal("Hooray!!","Sampul successful added","success")
+        </script>
     <?php elseif($this->session->flashdata('msg')=='info'):?>
         <script type="text/javascript">
                 swal("Hooray!!","Files successful updated","info")
         </script>
+    <?php elseif($this->session->flashdata('msg')=='warning'):?>
+        <script type="text/javascript">
+                swal("Hooray!!","Your File too Large, Careful","info")
+        </script>    
     <?php elseif($this->session->flashdata('msg')=='success-hapus'):?>
         <script type="text/javascript">
                 swal("Hooray!!","Files successful deleted","success")

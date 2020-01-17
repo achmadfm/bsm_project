@@ -58,6 +58,32 @@ class Files extends CI_Controller{
 		}
 	}
 
+	function simpan_sampul(){
+		$config['upload_path'] = './template/files/sampul/'; //path folder
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+        $config['encrypt_name'] = FALSE; //nama yang terupload nantinya
+
+		$this->upload->initialize($config);
+		if(!empty($_FILES['filefoto']['name']))
+		{
+			if ($this->upload->do_upload('filefoto'))
+			{
+				$gbr = $this->upload->data();
+				$file=$gbr['file_name'];
+				$kode=$this->input->post('kode');
+				$this->m_files->tambah_sampul($kode,$file);
+				echo $this->session->set_flashdata('msg','successsampul');
+				redirect('admin/files');
+			}else{
+				echo $this->session->set_flashdata('msg','warning');
+				redirect('admin/files');
+			}
+
+		}else{
+			redirect('admin/files');
+		}
+	}
+
 	function update_file(){
 
 		$query = $this->db->query("SELECT * FROM tbl_files");
@@ -100,8 +126,11 @@ class Files extends CI_Controller{
 	function hapus_file(){
 		$kode=$this->input->post('kode');
 		$data=$this->input->post('file');
+		$foto=$this->input->post('foto');
 		$path='./template/files/'.$data;
+		$path='./template/files/sampul/'.$foto;
 		unlink($path);
+		unlink($foto);
 		$this->m_files->hapus_file($kode);
 		echo $this->session->set_flashdata('msg','success-hapus');
 		redirect('admin/files');
