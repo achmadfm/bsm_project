@@ -269,6 +269,7 @@
                             <div class="modal-body">
                                 <input type="hidden" name="kode" value="<?php echo $id;?>"/>
                                 <input type="hidden" name="file" value="<?php echo $file;?>">
+                                    <input type="hidden" name="foto" value="<?php echo $foto;?>">
                                 <p>Apakah Anda yakin mau menghapus file <b><?php echo $judul;?></b> ?</p>
                             </div>
                             <div class="modal-footer">

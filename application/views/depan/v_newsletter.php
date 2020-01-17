@@ -156,23 +156,23 @@
 								</table>
 							</center>
 							<?php else: ?>
-							<?php foreach($data->result() as $row):?>
+							<?php foreach($data->result_array() as $row):?>
 							<div class="row">
 								<div class="col-lg-4">
 									<div class="owl-carousel owl-theme" data-plugin-options="{'items': 1, 'margin': 10}">
 										<div>
 											<span class="img-thumbnail d-block">
-												<img alt="" width="250" height="350" class="img-fluid" src="<?php echo base_url().'template/files/sampul/'.$row->file_sampul;?>">
+												<img alt="" width="250" height="350" class="img-fluid" src="<?php echo base_url().'template/files/sampul/'.$row['file_sampul'];?>">
 											</span>
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-8">
-									<h2 class="mb-0"><strong><?php echo $row->file_judul;?></strong></h2>
+									<h2 class="mb-0"><strong><?php echo $row['file_judul'];?></strong></h2>
 									<hr class="solid">
-									<p align="justify"><?php echo $row->file_deskripsi;?></p>
-										<a href="<?php echo base_url().'template/files/'.$row->file_data;?>" target="_blank" class="btn btn-3d btn-info btn-xs mb-2"><i class="fa fa-search"></i> Lihat</a>
-										<a href="<?php echo site_url('newsletter/get_file/'.$row->file_id);?>" class="btn btn-3d btn-primary btn-xs mb-2"><i class="fa fa-cloud-download"></i> Download</a>
+									<p align="justify"><?php echo $row['file_deskripsi'];?></p>
+										<a href="<?php echo base_url().'template/files/'.$row['file_data'];?>" target="_blank" class="btn btn-3d btn-info btn-xs mb-2"><i class="fa fa-search"></i> Lihat</a>
+										<a href="<?php echo site_url('emagazine/get_file/'.$row['file_id']);?>" class="btn btn-3d btn-primary btn-xs mb-2"><i class="fa fa-cloud-download"></i> Download</a>
 								</div>
 							</div>
 							<hr class="tall">
