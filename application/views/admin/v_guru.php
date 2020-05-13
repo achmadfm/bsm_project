@@ -114,7 +114,7 @@
                                     <thead>
                                         <tr>
                                             <th>Photo</th>
-                                            <th>Nomor</th>
+                                            <th>Unit Sekolah</th>
                                             <th>Nama</th>
                                             <th>Tempat/Tanggal Lahir</th>
                                             <th>Mata Pelajaran</th>
@@ -125,38 +125,39 @@
                                     </thead>
                                     <tbody>
                                       <?php
-                            					$no=0;
-                            					foreach ($data->result_array() as $i) :
-                            					   $no++;
-                            					   $id=$i['guru_id'];
-                            					   $nip=$i['guru_nip'];
-                            					   $nama=$i['guru_nama'];
-                            					   $jenkel=$i['guru_jenkel'];
-                            					   $tmp_lahir=$i['guru_tmp_lahir'];
-                            					   $tgl_lahir=$i['guru_tgl_lahir'];
-                                         $mapel=$i['guru_mapel'];
-                                         $id_posisi=$i['id_posisi'];
-                                         $nama_posisi=$i['nama_posisi'];
-                                         $list_ajaran=$i['opsi_ajaran'];
-                                         $status=$i['status_mengajar'];
-                                         $photo=$i['guru_photo'];
+                                        $no=0;
+                                        foreach ($data->result_array() as $i) :
+                                            $no++;
+                                            $id=$i['guru_id'];
+                                            $nip=$i['guru_nip'];
+                                            $nama=$i['guru_nama'];
+                                            $jenkel=$i['guru_jenkel'];
+                                            $tmp_lahir=$i['guru_tmp_lahir'];
+                                            $tgl_lahir=$i['guru_tgl_lahir'];
+                                            $mapel=$i['guru_mapel'];
+                                            $unit=$i['unit_sekolah'];
+                                            $id_posisi=$i['id_posisi'];
+                                            $nama_posisi=$i['nama_posisi'];
+                                            $list_ajaran=$i['opsi_ajaran'];
+                                            $status=$i['status_mengajar'];
+                                            $photo=$i['guru_photo'];
                                       ?>
                                         <tr>
-                                          <?php if(empty($photo)):?>
-                                          <td><img width="100px" height="100px" class="img-circle" src="<?php echo base_url().'template/images/userblank.png';?>"></td>
-                                          <?php else:?>
-                                          <td><img width="100px" height="100px" class="img-circle" src="<?php echo base_url().'template/teachers/'.$photo;?>"></td>
-                                          <?php endif;?>
-                                          <td><?php echo $nip;?></td>
-                                				  <td><?php echo $nama;?></td>
-                                          <td><?php echo $tmp_lahir.', '.$tgl_lahir;?></td>
-                                          <td><?php echo $mapel;?></td>
-                                          <td><?php echo $nama_posisi;?></td>
-                                          <td><?php echo $list_ajaran;?></td>
-                                          <td style="text-align:right;">
-                                                <a class="btn btn-success btn-circle" data-toggle="modal" data-target="#ModalEdit<?php echo $id;?>"><span class="fa fa-pencil"></span></a>
-                                                <a class="btn btn-danger btn-circle" data-toggle="modal" data-target="#ModalHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
-                                          </td>
+                                            <?php if(empty($photo)):?>
+                                            <td><img width="100px" height="100px" class="img-circle" src="<?php echo base_url().'template/images/userblank.png';?>"></td>
+                                            <?php else:?>
+                                            <td><img width="100px" height="100px" class="img-circle" src="<?php echo base_url().'template/teachers/'.$photo;?>"></td>
+                                            <?php endif;?>
+                                            <td><?php echo $unit;?></td>
+                                            <td><?php echo $nama;?></td>
+                                            <td><?php echo $tmp_lahir.', '.$tgl_lahir;?></td>
+                                            <td><?php echo $mapel;?></td>
+                                            <td><?php echo $nama_posisi;?></td>
+                                            <td><?php echo $list_ajaran;?></td>
+                                            <td style="text-align:right;">
+                                                    <a class="btn btn-success btn-circle" data-toggle="modal" data-target="#ModalEdit<?php echo $id;?>"><span class="fa fa-pencil"></span></a>
+                                                    <a class="btn btn-danger btn-circle" data-toggle="modal" data-target="#ModalHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
+                                            </td>
                                         </tr>
                                       <?php endforeach;?>
                                     </tbody>
