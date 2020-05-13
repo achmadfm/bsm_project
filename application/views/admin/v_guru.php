@@ -318,6 +318,7 @@
               $tgl_lahir=$i['guru_tgl_lahir'];
               $tentang=$i['guru_tentang'];
               $mapel=$i['guru_mapel'];
+              $unitsekolah=$i['unit_sekolah'];
               $id_pos=$i['id_posisi'];
               $nama_posisi=$i['nama_posisi'];
               $list=$i['opsi_ajaran'];
@@ -413,6 +414,25 @@
                                         <label for="inputUserName" class="col-sm-3 control-label">Mata Pelajaran</label>
                                         <div class="col-sm-7">
                                             <input type="text" name="xmapel" value="<?php echo $mapel;?>" class="form-control" id="inputUserName" placeholder="Contoh: PPKN, Matematika" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-3 control-label">Posisi</label>
+                                        <div class="col-sm-7">
+                                          <select name="xposisi" class="form-control" required>
+                                            <option value="">-Pilih-</option>
+                                            <?php
+                                                foreach ($unit->result_array() as $u) {
+                                                  $singkatan=$u['singkatan_unit'];
+                                                  $nama=$u['nama_unit'];
+                                                  if ($unitsekolah==$nama)
+                                                    echo "<option value='$nama selected>$singkatan</option>";
+                                                  else
+                                                    echo "<option value='$nama'>$singkatan</option>";
+                                                  }
+                                            ?>
+                                          </select>
                                         </div>
                                     </div>
 
