@@ -427,7 +427,7 @@
                                                   $singkatan=$u['singkatan_unit'];
                                                   $nama=$u['nama_unit'];
                                                   if ($unitsekolah==$nama)
-                                                    echo "<option value='$nama selected>$singkatan</option>";
+                                                    echo "<option value='$nama' selected>$singkatan</option>";
                                                   else
                                                     echo "<option value='$nama'>$singkatan</option>";
                                                   }
