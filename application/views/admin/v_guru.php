@@ -135,7 +135,7 @@
                                             $tmp_lahir=$i['guru_tmp_lahir'];
                                             $tgl_lahir=$i['guru_tgl_lahir'];
                                             $mapel=$i['guru_mapel'];
-                                            $unit=$i['unit_sekolah'];
+                                            $unitsekolah=$i['unit_sekolah'];
                                             $id_posisi=$i['id_posisi'];
                                             $nama_posisi=$i['nama_posisi'];
                                             $list_ajaran=$i['opsi_ajaran'];
@@ -148,7 +148,7 @@
                                             <?php else:?>
                                             <td><img width="100px" height="100px" class="img-circle" src="<?php echo base_url().'template/teachers/'.$photo;?>"></td>
                                             <?php endif;?>
-                                            <td><?php echo $unit;?></td>
+                                            <td><?php echo $unitsekolah;?></td>
                                             <td><?php echo $nama;?></td>
                                             <td><?php echo $tmp_lahir.', '.$tgl_lahir;?></td>
                                             <td><?php echo $mapel;?></td>
@@ -253,7 +253,6 @@
                                                 foreach ($unit->result_array() as $u) {
                                                   $singkatan=$u['singkatan_unit'];
                                                   $nama=$u['nama_unit'];
-
                                             ?>
                                             <option value="<?php echo $nama;?>"><?php echo $singkatan;?></option>
                                             <?php } ?>
