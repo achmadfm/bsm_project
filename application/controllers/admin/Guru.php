@@ -53,8 +53,8 @@ class Guru extends CI_Controller{
 				$tgl_lahir=strip_tags($this->input->post('xtgl_lahir'));
 				$tentang=strip_tags($this->input->post('xtentang'));
 				$mapel=strip_tags($this->input->post('xmapel'));
-				$id_unit = $this->uri->segment('3');
-				$get = $this->m_web_admin->get_unit_by_id($id_unit);
+				$u = $this->input->post('xunitsekolah');
+				$get = $this->m_web_admin->get_unit_by_name($u);
 				$unit = $get->row_array();
 				$namaunit = $unit['nama_unit'];
 				$posisi=strip_tags($this->input->post('xposisi'));
@@ -84,8 +84,8 @@ class Guru extends CI_Controller{
 			$tgl_lahir=strip_tags($this->input->post('xtgl_lahir'));
 			$tentang=strip_tags($this->input->post('xtentang'));
 			$mapel=strip_tags($this->input->post('xmapel'));
-			$id_unit = $this->uri->segment('3');
-			$get = $this->m_web_admin->get_unit_by_id($id_unit);
+			$u = $this->input->post('xunitsekolah');
+			$get = $this->m_web_admin->get_unit_by_name($u);
 			$unit = $get->row_array();
 			$namaunit = $unit['nama_unit'];
 			$posisi=strip_tags($this->input->post('xposisi'));
@@ -142,8 +142,8 @@ class Guru extends CI_Controller{
 				$tgl_lahir=strip_tags($this->input->post('xtgl_lahir'));
 				$tentang=strip_tags($this->input->post('xtentang'));
 				$mapel=strip_tags($this->input->post('xmapel'));
-				$id_unit = $this->uri->segment('3');
-				$get = $this->m_web_admin->get_unit_by_id($id_unit);
+				$u = $this->input->post('xunitsekolah');
+				$get = $this->m_web_admin->get_unit_by_name($u);
 				$unit = $get->row_array();
 				$namaunit = $unit['nama_unit'];
 				$posisi=strip_tags($this->input->post('xposisi'));
@@ -174,8 +174,8 @@ class Guru extends CI_Controller{
 			$tgl_lahir=strip_tags($this->input->post('xtgl_lahir'));
 			$tentang=strip_tags($this->input->post('xtentang'));
 			$mapel=strip_tags($this->input->post('xmapel'));
-			$id_unit = $this->uri->segment('3');
-			$get = $this->m_web_admin->get_unit_by_id($id_unit);
+			$u = $this->input->post('xunitsekolah');
+			$get = $this->m_web_admin->get_unit_by_name($u);
 			$unit = $get->row_array();
 			$namaunit = $unit['nama_unit'];
 			$posisi=strip_tags($this->input->post('xposisi'));

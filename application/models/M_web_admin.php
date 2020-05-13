@@ -36,6 +36,11 @@
       return $query;
     }
 
+    function get_unit_by_name($name){
+      $query = $this->db->query("SELECT * FROM tbl_unit WHERE nama_unit='$id'");
+      return $query;
+    }
+
     function get_tentang(){
       $query = $this->db->query("SELECT * FROM tbl_tentang");
       return $query;
