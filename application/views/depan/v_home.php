@@ -339,6 +339,12 @@
 					</div>
 
 					<hr class="tall">
+					<style>
+						iframe{
+							width : 100%;
+							height : 56.25vw;
+						}
+					</style>
 
 					<div class="container">
 						<div class="row counters">
