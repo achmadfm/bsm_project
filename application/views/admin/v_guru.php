@@ -249,6 +249,23 @@
                                           <select name="xposisi" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
+                                                foreach ($unit->result_array() as $u) {
+                                                  $singkatan=$u['singkatan_unit'];
+                                                  $nama=$u['nama_unit'];
+
+                                            ?>
+                                            <option value="<?php echo $nama;?>"><?php echo $singkatan;?></option>
+                                            <?php } ?>
+                                          </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-3 control-label">Posisi</label>
+                                        <div class="col-sm-7">
+                                          <select name="xposisi" class="form-control" required>
+                                            <option value="">-Pilih-</option>
+                                            <?php
                                                 foreach ($pos->result_array() as $k) {
                                                   $id_posisi=$k['id_posisi'];
                                                   $nm_posisi=$k['nama_posisi'];

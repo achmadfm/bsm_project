@@ -9,12 +9,14 @@ class Guru extends CI_Controller{
 		$this->load->model('m_guru');
 		$this->load->model('m_pengguna');
 		$this->load->model('m_posisi');
+		$this->load->model('m_web_admin');
 		$this->load->library('upload');
 	}
 
 
 	function index(){
 		$x['opsi']=$this->m_guru->get_opsi_ajaran();
+		$x['unit']=$this->m_web_admin->get_unit();
 		$x['data']=$this->m_guru->get_all_guru();
 		$x['pos']=$this->m_posisi->get_all_posisi();
 		$this->load->view('admin/v_guru',$x);
@@ -51,6 +53,10 @@ class Guru extends CI_Controller{
 				$tgl_lahir=strip_tags($this->input->post('xtgl_lahir'));
 				$tentang=strip_tags($this->input->post('xtentang'));
 				$mapel=strip_tags($this->input->post('xmapel'));
+				$id_unit = $this->uri->segment('3');
+				$get = $this->m_web_admin->get_unit_by_id($id_unit);
+				$unit = $get->row_array();
+				$namaunit = $unit['nama_unit'];
 				$posisi=strip_tags($this->input->post('xposisi'));
 				if($this->input->post('list_ajaran') != ''){
 					$opsi=$this->input->post('list_ajaran');
@@ -62,7 +68,7 @@ class Guru extends CI_Controller{
 				$p=$ps->row_array();
 				$namapos=$p['nama_posisi'];
 				$status=strip_tags($this->input->post('xajar'));
-				$this->m_guru->simpan_guru($nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$tentang,$mapel,$posisi,$namapos,$list,$status,$photo);
+				$this->m_guru->simpan_guru($nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$tentang,$mapel,$namaunit,$posisi,$namapos,$list,$status,$photo);
 				echo $this->session->set_flashdata('msg','success');
 				redirect('admin/guru');
 			}else{
@@ -78,6 +84,10 @@ class Guru extends CI_Controller{
 			$tgl_lahir=strip_tags($this->input->post('xtgl_lahir'));
 			$tentang=strip_tags($this->input->post('xtentang'));
 			$mapel=strip_tags($this->input->post('xmapel'));
+			$id_unit = $this->uri->segment('3');
+			$get = $this->m_web_admin->get_unit_by_id($id_unit);
+			$unit = $get->row_array();
+			$namaunit = $unit['nama_unit'];
 			$posisi=strip_tags($this->input->post('xposisi'));
 			if($this->input->post('list_ajaran') != ''){
 				$opsi=$this->input->post('list_ajaran');
@@ -89,7 +99,7 @@ class Guru extends CI_Controller{
 			$p=$ps->row_array();
 			$namapos=$p['nama_posisi'];
 			$status=strip_tags($this->input->post('xajar'));
-			$this->m_guru->simpan_guru_tanpa_img($nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$tentang,$mapel,$posisi,$namapos,$list,$status);
+			$this->m_guru->simpan_guru_tanpa_img($nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$tentang,$mapel,$namaunit,$posisi,$namapos,$list,$status);
 			echo $this->session->set_flashdata('msg','success');
 			redirect('admin/guru');
 		}
@@ -132,6 +142,10 @@ class Guru extends CI_Controller{
 				$tgl_lahir=strip_tags($this->input->post('xtgl_lahir'));
 				$tentang=strip_tags($this->input->post('xtentang'));
 				$mapel=strip_tags($this->input->post('xmapel'));
+				$id_unit = $this->uri->segment('3');
+				$get = $this->m_web_admin->get_unit_by_id($id_unit);
+				$unit = $get->row_array();
+				$namaunit = $unit['nama_unit'];
 				$posisi=strip_tags($this->input->post('xposisi'));
 				if($this->input->post('list_ajaran') != ''){
 					$opsi=$this->input->post('list_ajaran');
@@ -143,7 +157,7 @@ class Guru extends CI_Controller{
 				$p=$ps->row_array();
 				$namapos=$p['nama_posisi'];
 				$status=strip_tags($this->input->post('xajar'));
-				$this->m_guru->update_guru($kode,$nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$tentang,$mapel,$posisi,$namapos,$list,$status,$photo);
+				$this->m_guru->update_guru($kode,$nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$tentang,$mapel,$namaunit,$posisi,$namapos,$list,$status,$photo);
 				echo $this->session->set_flashdata('msg','info');
 				redirect('admin/guru');
 
@@ -160,6 +174,10 @@ class Guru extends CI_Controller{
 			$tgl_lahir=strip_tags($this->input->post('xtgl_lahir'));
 			$tentang=strip_tags($this->input->post('xtentang'));
 			$mapel=strip_tags($this->input->post('xmapel'));
+			$id_unit = $this->uri->segment('3');
+			$get = $this->m_web_admin->get_unit_by_id($id_unit);
+			$unit = $get->row_array();
+			$namaunit = $unit['nama_unit'];
 			$posisi=strip_tags($this->input->post('xposisi'));
 			if($this->input->post('list_ajaran') != ''){
 				$opsi=$this->input->post('list_ajaran');
@@ -171,7 +189,7 @@ class Guru extends CI_Controller{
 			$p=$ps->row_array();
 			$namapos=$p['nama_posisi'];
 			$status=strip_tags($this->input->post('xajar'));
-			$this->m_guru->update_guru_tanpa_img($kode,$nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$tentang,$mapel,$posisi,$namapos,$list,$status);
+			$this->m_guru->update_guru_tanpa_img($kode,$nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$tentang,$mapel,$namaunit,$posisi,$namapos,$list,$status);
 			echo $this->session->set_flashdata('msg','info');
 			redirect('admin/guru');
 		}

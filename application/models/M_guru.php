@@ -21,21 +21,21 @@ class M_guru extends CI_Model{
 		return $this->db->query("SELECT * FROM tbl_opsi ORDER BY id_opsi ASC");
 	}
 
-	function simpan_guru($nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$tentang,$mapel,$id_posisi,$nama_posisi,$opsi_ajaran,$status,$photo){
-		$hsl=$this->db->query("INSERT INTO tbl_guru (guru_nip,guru_nama,guru_jenkel,guru_tmp_lahir,guru_tgl_lahir,guru_tentang,guru_mapel,id_posisi,nama_posisi,opsi_ajaran,status_mengajar,guru_photo) VALUES ('$nip','$nama','$jenkel','$tmp_lahir','$tgl_lahir','$tentang','$mapel','$id_posisi','$nama_posisi','$opsi_ajaran','$status','$photo')");
+	function simpan_guru($nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$tentang,$mapel,$unit,$id_posisi,$nama_posisi,$opsi_ajaran,$status,$photo){
+		$hsl=$this->db->query("INSERT INTO tbl_guru (guru_nip,guru_nama,guru_jenkel,guru_tmp_lahir,guru_tgl_lahir,guru_tentang,guru_mapel,unit_sekolah,id_posisi,nama_posisi,opsi_ajaran,status_mengajar,guru_photo) VALUES ('$nip','$nama','$jenkel','$tmp_lahir','$tgl_lahir','$tentang','$mapel','$id_posisi','$unit','$nama_posisi','$opsi_ajaran','$status','$photo')");
 		return $hsl;
 	}
-	function simpan_guru_tanpa_img($nip,$nama,$jenkel,$tmp_lahir,$tentang,$tgl_lahir,$mapel,$id_posisi,$nama_posisi,$opsi_ajaran,$status){
-		$hsl=$this->db->query("INSERT INTO tbl_guru (guru_nip,guru_nama,guru_jenkel,guru_tmp_lahir,guru_tgl_lahir,guru_tentang,guru_mapel,id_posisi,nama_posisi,opsi_ajaran,status_mengajar) VALUES ('$nip','$nama','$jenkel','$tmp_lahir','$tgl_lahir','$tentang','$mapel','$id_posisi','$nama_posisi','$opsi_ajaran','$status')");
+	function simpan_guru_tanpa_img($nip,$nama,$jenkel,$tmp_lahir,$tentang,$tgl_lahir,$mapel,$unit,$id_posisi,$nama_posisi,$opsi_ajaran,$status){
+		$hsl=$this->db->query("INSERT INTO tbl_guru (guru_nip,guru_nama,guru_jenkel,guru_tmp_lahir,guru_tgl_lahir,guru_tentang,guru_mapel,unit_sekolah,id_posisi,nama_posisi,opsi_ajaran,status_mengajar) VALUES ('$nip','$nama','$jenkel','$tmp_lahir','$tgl_lahir','$tentang','$mapel','$unit','$id_posisi','$nama_posisi','$opsi_ajaran','$status')");
 		return $hsl;
 	}
 
-	function update_guru($kode,$nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$tentang,$mapel,$id_posisi,$nama_posisi,$opsi_ajaran,$status,$photo){
-		$hsl=$this->db->query("UPDATE tbl_guru SET guru_nip='$nip',guru_nama='$nama',guru_jenkel='$jenkel',guru_tmp_lahir='$tmp_lahir',guru_tgl_lahir='$tgl_lahir',guru_tentang='$tentang',guru_mapel='$mapel',id_posisi='$id_posisi',nama_posisi='$nama_posisi',opsi_ajaran='$opsi_ajaran', status_mengajar='$status',guru_photo='$photo' WHERE guru_id='$kode'");
+	function update_guru($kode,$nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$tentang,$mapel,$unit,$id_posisi,$nama_posisi,$opsi_ajaran,$status,$photo){
+		$hsl=$this->db->query("UPDATE tbl_guru SET guru_nip='$nip',guru_nama='$nama',guru_jenkel='$jenkel',guru_tmp_lahir='$tmp_lahir',guru_tgl_lahir='$tgl_lahir',guru_tentang='$tentang',guru_mapel='$mapel',unit_sekolah='$unit',id_posisi='$id_posisi',nama_posisi='$nama_posisi',opsi_ajaran='$opsi_ajaran', status_mengajar='$status',guru_photo='$photo' WHERE guru_id='$kode'");
 		return $hsl;
 	}
-	function update_guru_tanpa_img($kode,$nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$tentang,$mapel,$id_posisi,$nama_posisi,$opsi_ajaran,$status){
-		$hsl=$this->db->query("UPDATE tbl_guru SET guru_nip='$nip',guru_nama='$nama',guru_jenkel='$jenkel',guru_tmp_lahir='$tmp_lahir',guru_tgl_lahir='$tgl_lahir',guru_tentang='$tentang',guru_mapel='$mapel',id_posisi='$id_posisi',nama_posisi='$nama_posisi',opsi_ajaran='$opsi_ajaran', status_mengajar='$status' WHERE guru_id='$kode'");
+	function update_guru_tanpa_img($kode,$nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$tentang,$mapel,$unit,$id_posisi,$nama_posisi,$opsi_ajaran,$status){
+		$hsl=$this->db->query("UPDATE tbl_guru SET guru_nip='$nip',guru_nama='$nama',guru_jenkel='$jenkel',guru_tmp_lahir='$tmp_lahir',guru_tgl_lahir='$tgl_lahir',guru_tentang='$tentang',guru_mapel='$mapel',unit_sekolah='$unit',id_posisi='$id_posisi',nama_posisi='$nama_posisi',opsi_ajaran='$opsi_ajaran', status_mengajar='$status' WHERE guru_id='$kode'");
 		return $hsl;
 	}
 	function hapus_guru($kode){
