@@ -178,7 +178,7 @@
 
 												<h1><a href="<?php echo site_url().'page/'.$row->tulisan_slug;?>"><?php echo $row->tulisan_judul;?></a></h1>
 												<div class="post-meta">
-													<span><i class="fa fa-user"></i> Editor : <?php echo $row->tulisan_author;?> </span>
+													<span><i class="fa fa-user"></i> Penulis : <?php echo $row->tulisan_author;?> </span>
 													<span><i class="fa fa-tags"></i> <?php echo $row->tulisan_kategori_nama;?></span><br>
 													<span><i class="fa fa-eye"></i> dibaca : <strong><?php echo $row->tulisan_views;?></strong> kali</span>
 												</div>
