@@ -635,6 +635,8 @@
         CKEDITOR.replace('editor1' ,{
         filebrowserImageBrowseUrl : '<?php echo base_url('plugins/kcfinder'); ?>'
         });
+    </script>
+    <script>
         CKEDITOR.replace('editor2' ,{
         filebrowserImageBrowseUrl : '<?php echo base_url('plugins/kcfinder'); ?>'
         });
