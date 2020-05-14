@@ -406,7 +406,7 @@
                                     <div class="form-group">
                                       <label for="inputUserName" class="col-sm-2 control-label">Tentang</label>
                                       <div class="col-sm-9">
-                                          <textarea id="editor1" class="form-control" name="xtentang" style="height:260px" required><?php echo $tentang;?></textarea>
+                                          <textarea id="editor2" class="form-control" name="xtentang" style="height:260px"><?php echo $tentang;?></textarea>
                                       </div>
                                     </div>
 
@@ -632,9 +632,12 @@
     <script src="<?php echo base_url()?>plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
     <script src="<?php echo base_url()?>plugins/ckeditor/ckeditor.js"></script>
     <script>
-    CKEDITOR.replace('editor1' ,{
-      filebrowserImageBrowseUrl : '<?php echo base_url('plugins/kcfinder'); ?>'
-    });
-  </script>
+        CKEDITOR.replace('editor1' ,{
+        filebrowserImageBrowseUrl : '<?php echo base_url('plugins/kcfinder'); ?>'
+        });
+        CKEDITOR.replace('editor2' ,{
+        filebrowserImageBrowseUrl : '<?php echo base_url('plugins/kcfinder'); ?>'
+        });
+    </script>
 </body>
 </html>
