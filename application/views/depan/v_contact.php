@@ -141,7 +141,7 @@
 
 					<div class="row">
 						<div class="col-md-6">
-							<h2 class="mb-sm mt-sm"><strong>Hubungi</strong> Kami</h2>
+							<h2 class="mb-xl mt-xl"><strong>Hubungi</strong> Kami</h2>
 							<form action="<?php echo base_url().'kontak/kirim_pesan'?>" method="POST">
 								<div class="row">
 									<div class="form-group">
@@ -182,12 +182,21 @@
 						<hr>
 						<div class="col-md-6">
 
-							<h4 class="heading-primary"><strong>Kantor</strong></h4>
+							<h4 class="heading-primary"><strong>Kantor Bosowa School Makassar</strong></h4>
 								<a class="mt-1 mb-1 popup-gmaps btn btn-primary" href="https://www.google.com/maps/place/Bosowa+School+Makassar/@-5.1515996,119.4185027,17z/data=!3m1!4b1!4m5!3m4!1s0x2dbee2a7d50fd595:0xcfd7bad563becf25!8m2!3d-5.1515996!4d119.4206914" target="_blank">Open Google Map</a>
 							<ul class="list list-icons list-icons-style-3 mt-xlg">
 								<li><i class="fa fa-map-marker"></i> <strong>Alamat:</strong> Jl. Lanto Dg. Pasewang No.39-41, Makassar, Sulawesi Selatan</li>
 								<li><i class="fa fa-phone"></i> <strong>Telepon:</strong> (0411) 855-123</li>
 								<li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="#">info@bosowaschool.sch.id</a></li>
+							</ul>
+
+							<hr>
+
+							<h4 class="heading-primary"><strong>Kantor Sekolah Alam Bosowa</strong></h4>
+								<a class="mt-1 mb-1 popup-gmaps btn btn-primary" href="https://www.google.com/maps/place/Sekolah+Alam+Bosowa/@-5.1701387,119.3943366,17z/data=!4m12!1m6!3m5!1s0x2dbee2a7d3bd8a69:0xe6fbf6d9f74bcd7a!2sSekolah+Alam+Bosowa!8m2!3d-5.1701387!4d119.3965253!3m4!1s0x2dbee2a7d3bd8a69:0xe6fbf6d9f74bcd7a!8m2!3d-5.1701387!4d119.3965253" target="_blank">Open Google Map</a>
+							<ul class="list list-icons list-icons-style-3 mt-xlg">
+								<li><i class="fa fa-map-marker"></i> <strong>Alamat:</strong> Jl. Danau Tj. Bunga, Maccini Sombala, Tamalate, Makassar, Sulawesi Selatan</li>
+								<li><i class="fa fa-phone"></i> <strong>Contact Person:</strong> +6282314039696 (Ms. Tika)</li>
 							</ul>
 
 							<hr>
