@@ -128,13 +128,13 @@
 							<div class="col-md-12">
 								<ul class="breadcrumb">
 									<li><a href="#">Home</a></li>
-									<li class="active">Berita</li>
+									<li class="active">Berita Sekolah</li>
 								</ul>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<h1>Berita Terbaru Sekolah</h1>
+								<h1>Berita Sekolah</h1>
 							</div>
 						</div>
 					</div>
@@ -145,6 +145,18 @@
 					<div class="row">
 						<div class="col-md-9">
 							<div class="blog-posts">
+                            <?php
+                                $berita = $data->num_rows();
+                                if(empty($berita)):
+                            ?>
+                            <center>
+                                <table>
+                                    <tr>
+                                        <td><h2>Berita Sekolah Belum Ada</h2></td>
+                                    </tr>
+                                </table>
+                            </center>
+                                <?php else:?>
 								<article class="post post-medium">
 								<?php echo $this->session->flashdata('msg');?>
 									<?php foreach ($data->result() as $row) :?>
@@ -164,21 +176,22 @@
 
 											<div class="post-content">
 
-												<h1><a href="<?php echo site_url().'news/'.$row->tulisan_slug;?>"><?php echo $row->tulisan_judul;?></a></h1>
+												<h1><a href="<?php echo site_url().'page/'.$row->tulisan_slug;?>"><?php echo $row->tulisan_judul;?></a></h1>
 												<div class="post-meta">
-													<span><i class="fa fa-calendar"></i> Tanggal : <?php echo Berita::format_tanggal($row->tanggal);?> </span>
-													<span><i class="fa fa-user"></i> Penulis : <?php echo $row->tulisan_author;?> </span>
+													<span><i class="fa fa-calendar"></i> Tanggal : <?php echo Umum::format_tanggal($row->tanggal);?> </span>
+													<span><i class="fa fa-user"></i> Editor : <?php echo $row->tulisan_author;?> </span>
+                                                    <span><i class="fa fa-pencil"></i> Penulis : <?php echo $row->tulisan_penulis;?> </span>
 													<span><i class="fa fa-tags"></i> <?php echo $row->tulisan_kategori_nama;?></span><br>
 													<span><i class="fa fa-eye"></i> dibaca : <strong><?php echo $row->tulisan_views;?></strong> kali</span>
 												</div>
 												<?php echo limit_words($row->tulisan_isi,30);?>
-												<a href="<?php echo site_url().'news/'.$row->tulisan_slug;?>" class="btn btn-xs btn-primary pull-right">Selengkapnya</a>
+												<a href="<?php echo site_url().'page/'.$row->tulisan_slug;?>" class="btn btn-xs btn-primary pull-right">Selengkapnya</a>
 											</div>
 										</div>
-									</div>
 								</div>
 								<?php endforeach;?>
 								</article>
+                                <?php endif;?>
 								<?php  error_reporting(0); echo $page;?>
 							</div>
 						</div>
@@ -224,9 +237,9 @@
 														</div>
 													</div>
 													<div class="post-info">
-														<a href="<?php echo site_url().'news/'.$row->tulisan_slug;?>"><?php echo $row->tulisan_judul;?></a>
+														<a href="<?php echo site_url().'page/'.$row->tulisan_slug;?>"><?php echo $row->tulisan_judul;?></a>
 														<div class="post-meta">
-															<?php echo Berita::format_tanggal($row->tanggal);?>
+															<?php echo Umum::format_tanggal($row->tanggal);?>
 														</div>
 													</div>
 												</li>
@@ -241,15 +254,15 @@
 												<li>
 													<div class="post-image">
 														<div class="img-thumbnail">
-															<a href="<?php echo base_url().'news/'.$row->tulisan_slug;?>">
+															<a href="<?php echo base_url().'page/'.$row->tulisan_slug;?>">
 																<img src="<?php echo base_url().'template/cover/'.$row->tulisan_gambar;?>" height="50px" width="50px">
 															</a>
 														</div>
 													</div>
 													<div class="post-info">
-														<a href="<?php echo base_url().'news/'.$row->tulisan_slug;?>"><?php echo $row->tulisan_judul?></a>
+														<a href="<?php echo base_url().'page/'.$row->tulisan_slug;?>"><?php echo $row->tulisan_judul?></a>
 														<div class="post-meta">
-															 <?php echo Berita::format_tanggal($row->tanggal);?>
+															 <?php echo Umum::format_tanggal($row->tanggal);?>
 														</div>
 													</div>
 												</li>
