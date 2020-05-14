@@ -44,8 +44,12 @@ class M_guru extends CI_Model{
 	}
 
 	//front-end
-	function guru(){
-		$hsl=$this->db->query("SELECT * FROM tbl_guru");
+	function gurubsm(){
+		$hsl=$this->db->query("SELECT * FROM tbl_guru WHERE unit_sekolah='Bosowa School Makassar'");
+		return $hsl;
+	}
+	function gurusab(){
+		$hsl=$this->db->query("SELECT * FROM tbl_guru WHERE unit_sekolah='Sekolah Alam Bosowa'");
 		return $hsl;
 	}
 	function guru_perpage($offset,$limit){

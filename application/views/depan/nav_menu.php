@@ -11,7 +11,13 @@
       </a>
       <ul class="dropdown-menu">
         <li><a href="<?php echo base_url('kata_sambutan')?>">Sambutan Kepala Sekolah</a></li>
-        <li><a href="<?php echo base_url('guru')?>">Guru dan Staff</a></li>
+        <li class="dropdown-submenu">
+          <a class="dropdown-toggle" href="#">Guru</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="<?php echo base_url('guru/bsm')?>">Bosowa School Makassar</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url('guru/sab')?>">Sekolah Alam Bosowa</a></li>
+          </ul>
+        </li>
         <li><a href="<?php echo base_url('visi_misi')?>">Visi dan Misi</a></li>
         <li><a href="<?php echo base_url('sejarah')?>">Sejarah</a></li>
         <li><a href="<?php echo base_url('galeri')?>">Galeri</a></li>

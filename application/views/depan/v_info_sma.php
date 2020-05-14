@@ -97,11 +97,11 @@
 						<div class="header-row">
 							<div class="header-column">
 								<div class="header-row">
-                  <div class="header-logo">
-  									<a href="<?php echo base_url()?>">
-  										<img alt="Porto" width="100" height="100" data-sticky-width="100" data-sticky-height="50" data-sticky-top="55" src="<?php echo base_url()?>materialize/sekolah.png">
-  									</a>
-  								</div>
+									<div class="header-logo">
+										<a href="<?php echo base_url()?>">
+											<img alt="Porto" width="100" height="100" data-sticky-width="100" data-sticky-height="50" data-sticky-top="55" src="<?php echo base_url()?>materialize/sekolah.png">
+										</a>
+									</div>
 								</div>
 							</div>
 							<div class="header-column justify-content-end">

@@ -35,13 +35,13 @@ class Guru extends CI_Controller{
   }
   
   function bsm(){
-    $x['data']=$this->m_guru->guru();
+    $x['data']=$this->m_guru->gurubsm();
 		$x['posi']=$this->m_posisi->get_all_posisi();
 		$this->load->view('depan/v_gurubsm',$x);
   }
 
   function sab(){
-    $x['data']=$this->m_guru->guru();
+    $x['data']=$this->m_guru->gurusab();
 		$x['posi']=$this->m_posisi->get_all_posisi();
 		$this->load->view('depan/v_gurusab',$x);
   }
