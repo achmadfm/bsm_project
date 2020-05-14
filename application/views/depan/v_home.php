@@ -343,19 +343,19 @@
 					<div class="container">
 						<div class="row counters">
 							<div class="col-sm-6 col-lg-4">
-								<div class="counter counter-warning appear-animation embed-responsive" data-appear-animation="bounceIn" data-appear-animation-delay="300">
+								<div class="counter counter-warning appear-animation responsive" data-appear-animation="bounceIn" data-appear-animation-delay="300">
 									<iframe width="320" height="220" src="https://www.youtube.com/embed/kUCF2D4bxmk" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 									<label><b>Profil Bosowa School Makassar</b></label>
 								</div>
 							</div>
 							<div class="col-sm-6 col-lg-4">
-								<div class="counter counter-warning appear-animation embed-responsive" data-appear-animation="bounceIn" data-appear-animation-delay="600">
+								<div class="counter counter-warning appear-animation responsive" data-appear-animation="bounceIn" data-appear-animation-delay="600">
 									<iframe width="320" height="220" src="https://www.youtube.com/embed/gBRg5wClosE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 									<label><b>The Graduation of Bosowa School Makassar 2018/2019</b></label>
 								</div>
 							</div>
 							<div class="col-sm-6 col-lg-4">
-								<div class="counter counter-warning appear-animation embed-responsive" data-appear-animation="bounceIn" data-appear-animation-delay="900">
+								<div class="counter counter-warning appear-animation responsive" data-appear-animation="bounceIn" data-appear-animation-delay="900">
 								<iframe width="320" height="220" src="https://www.youtube.com/embed/goOzyS_V8P0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 									<label><b>Semester Celebration SAB</b></label>
 								</div>
