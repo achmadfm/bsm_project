@@ -239,7 +239,7 @@
 													<div class="post-info">
 														<a href="<?php echo site_url().'page/'.$row->tulisan_slug;?>"><?php echo $row->tulisan_judul;?></a>
 														<div class="post-meta">
-															<?php echo Umum::format_tanggal($row->tanggal);?>
+															<?php echo Berita::format_tanggal($row->tanggal);?>
 														</div>
 													</div>
 												</li>
@@ -262,7 +262,7 @@
 													<div class="post-info">
 														<a href="<?php echo base_url().'page/'.$row->tulisan_slug;?>"><?php echo $row->tulisan_judul?></a>
 														<div class="post-meta">
-															 <?php echo Umum::format_tanggal($row->tanggal);?>
+															 <?php echo Berita::format_tanggal($row->tanggal);?>
 														</div>
 													</div>
 												</li>
