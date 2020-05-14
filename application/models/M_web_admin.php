@@ -37,7 +37,7 @@
     }
 
     function get_unit_by_name($name){
-      $query = $this->db->query("SELECT * FROM tbl_unit WHERE nama_unit='$id'");
+      $query = $this->db->query("SELECT * FROM tbl_unit WHERE nama_unit='$name'");
       return $query;
     }
 

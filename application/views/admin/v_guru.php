@@ -418,7 +418,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-3 control-label">Posisi</label>
+                                        <label for="inputUserName" class="col-sm-3 control-label">Unit Sekolah</label>
                                         <div class="col-sm-7">
                                           <select name="xunitsekolah" class="form-control" required>
                                             <option value="">-Pilih-</option>
