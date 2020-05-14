@@ -149,7 +149,6 @@
 								<?php echo $this->session->flashdata('msg');?>
 									<?php foreach ($data->result() as $row) :?>
 									<div class="row">
-										
 										<div class="col-md-5">
 											<div class="post-image">
 												<div class="owl-carousel owl-theme" data-plugin-options="{'items':1}">
@@ -176,6 +175,7 @@
 												<a href="<?php echo site_url().'news/'.$row->tulisan_slug;?>" class="btn btn-xs btn-primary pull-right">Selengkapnya</a>
 											</div>
 										</div>
+									</div>
 								</div>
 								<?php endforeach;?>
 								</article>
